@@ -1,0 +1,187 @@
+\documentclass[openany]{book}
+
+%encoding
+%--------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\usepackage{gensymb} %simbolo de grau
+%--------------------------------------
+ 
+%Portuguese-specific commands
+%--------------------------------------
+\usepackage[portuguese]{babel}
+%--------------------------------------
+
+\usepackage[shortlabels]{enumitem}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{subfiles} %suporte a multiplos arquivos
+\graphicspath{{img/}} %pasta das imagens
+\usepackage{fancyhdr} %para formatar o rodape
+
+%Rodape
+%---------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[CE,CO]{\textit{material em versão beta}}
+\fancyfoot[LE,RO]{\thepage} 
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+%---------------------------------------
+
+%novos ambientes que eu criei
+%--------------------------------------
+\newtheorem*{teorema}{Teorema}
+\newtheorem{questao}{Questão}[chapter]
+\newtheorem{diagnostico}{Questão}
+\newtheorem*{resolvida}{Questão resolvida}
+\newtheorem*{resolva}{Questão do livro-texto}
+\newtheorem{adicional}{Questão}
+\newtheorem*{reflita}{Reflita}
+
+\DeclareTextFontCommand\sugestao{\textsc}
+%--------------------------------------
+
+%elementos visuais
+%--------------------------------------
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ inner=25mm,
+ outer=15mm,
+ top=15mm,
+ bottom=15mm,
+ }
+%--------------------------------------
+
+\title{Material do tutor - Tutoria MA111 e MA141}
+\author{Leonardo Barichello}
+\date{\today}
+ 
+\begin{document}
+ 
+\maketitle
+
+\chapter{Introdução}
+
+Este material foi desenvolvido especificamente para aqueles estudantes que foram aprovados no vestibular da Unicamp ou no ENEM com uma nota em Matemática que sugere que eles terão dificuldades em serem aprovados nas disciplinas Cálculo Diferencial e Integral I e Geometria Analítica.
+
+Em termos de conteúdo, não queremos reforçar os conteúdos dessas duas disciplinas nem promover uma revisão do Ensino Médio. Nossa intenção é revisitar alguns tópicos do Ensino Médio enfatizando aspectos que estejam diretamente relacionados com Cálculo Diferencial e Integral I e Geometria Analítica.
+
+Em termos da abordagem, nosso foco não é em fluência na resolução de exercícios, mas no entendimento dos tópicos em questão.
+
+Você atenderá dois grupos com cerca de 10 ingressantes cada e terá acesso a um professor que orientará o trabalho dos tutores ao longo de todo o semestre. Além da tutoria durante o encontro, esperamos de você uma boa preparação antes de cada encontro e algumas tarefas gerenciais relcionadas ao acompanhamento das atividades. Suas obrigações devem ficar claras ao longo das próximas seções.
+
+\section{O que esperamos de você, tutor}
+
+\subsection{Conheça o material}
+
+Esperamos que você, além de resolver todas as questões propostas aos estudantes, leia atentamente os comentários acerca de cada questão para que esteja ciente de algumas nuances que podem passar despercebidas. A ordem das questões, os itens de cada uma delas e até mesmo os valores numéricos de cada item foram pensados cuidadosamente para que o estudante tenha uma experiência gradual e novos elementos sejam inseridos apenas quando os anteriores já tenham sido devidamente abordados.
+
+Sugestões de onde podem surgir dificuldades e como elas podem ser abordadas, bem como de exemplos adicionais e variações das questões, estão presentes ao longo de todo este material. Por isso, esperamos que ele seja uma leitura útil para antes de cada encontro e uma referência para durante.
+
+\subsection{Evite usar lousa}
+
+Pode parecer uma sugestão estranha, mas a mensagem que queremos passar com ela é que a atividade de tutoria não deve virar uma aula expositiva sobre o conteúdo, muito menos aula de resolução de exercícios em que o tutor resolve os exercícios e os estudantes anotam resolução. Experiências similares em outras universidades mostram que o envolvimento ativo dos estudantes na resolução das questões é fundamental para o sucesso dessa proposta.
+
+Uma estória exagerada pode ser útil para explicar o que esperamos com essa recomendação: um professor universitário, durante seu horário de atendimento, costumava resolver questões em folhas de rascunhos para os estudantes que vinham procurá-lo e, ao final da resolução, perguntava ``Você entendeu?'' e se a resposta fosse sim, ele jogava o papel fora e dizia ``ótimo, então você pode fazer sozinho agora''.
+
+Obviamente, você não precisa agir dessa maneira. Confiamos na sua sensibilidade para decidir o que é melhor para a sua turma de estudantes. Mas a mensagem que queremos passar é de que durante as atividades da tutoria, são os estudantes que devem fazer o trabalho, você está ali para oferecer suporte.
+
+\subsection{Responda com perguntas}
+
+Sempre que possível tente responder as perguntas feitas pelos estudantes com novas perguntas que sugiram caminhos ao invés de dar a solução. ``O que exatamente você já tentou fazer?'', ``Você já tentou isso?'', ``Você já checou como fulano resolveu''?, ``Você leu o texto antes da questão?'' são algumas das questões que podem ser usadas em particamente qualquer ponto dos cadernos. A leitura atenta do material do tutor deve lhe ajudar na identificação e escolha de boas perguntas.
+
+Eventualmente alguns pontos precisam ser explicados de forma mais expositiva, mas quando esse for o caso, tente evitar resolver a questão específica que gerou a dúvida e, se o fizer, proponha uma nova questão ao tutorado. 
+
+\subsection{Use o grupo}
+
+Duas das intervenções com maior impacto em termos de aprendizagem são tutoria por colegas e apoio individualizado. Embora os grupos com os quais você vai trabalhar não sejam tão pequenos assim, você pode atingir esse efeito no seu grupo de estudantes pedindo que eles se ajudem sempre que houver dúvidas em qustões que já tenham sido resolvidas por outros estudantes.
+
+O fato de a quantidade de questões no material não ser muito grande tem como objetivo justamente viabilizar esse tipo de ação, a qual pode parecer lenta inicialmente mas tem grande potencial de impacto em termos de aprendizagem.
+
+\subsection{Não tenha pressa}
+
+O objetivo das atividades de tutoria não é promover a fluência com certos procedimentos, mas um entendimento mais conceitual dos tópicos. Portanto, não apresse seus alunos para que terminem os capítulos dentro de certos prazos. É preferível que um aluno não resolva todas as questões mas tenha compreendido bem as que resolveu do que ele tenha obtido a resposta correta em todas através de um engajamento superficial.
+
+Apesar de o comprimento dos caítulos terem sido concebidos de modo que a maioria dos tutorados possam conclui-los, é possível que alguns alunos não resolvam todas as questões de algum determinado capítulo. Sem problemas. Nossa recomendação é que você siga para o capítulo seguinte (evitando que o conteúdo da tutoria seja ultrapassado pelo das disciplinas oficiais). A calibração dos capítulos será feita quando so dados sobre o progresso dos tutorados forem analisados.
+
+\subsection{Planeje}
+
+O material que você tem em mãos foi concebido de modo a caber no tempo limitado disponível para as atividades da tutoria. Foram desenvolvidos 12 cadernos para serem desenvolvidos ao longo das 15 semanas do semestre. Cada capítulo deve ser utilizado por uma semana (total de 3 horas).
+
+As 3 semanas de diferença foram intencionalmente deixadas para que feriados e outras interferências não comprometam o andamento das atividades. Entretanto, esses eventos são difíceis de prever com antecedência. Por isso, sugerimos que você cheque o calendário do semestre e verifique como será a distribuição dos seus encontros antes do semestre começar.
+
+Nossa recomendação é que ao menos um encontro a cada 4 semanas seja reservado para que as atividades previstas nos cadernos sejam colocadas em dia. Caso você tenham mais algum encontro sobrando, sugerimos que você planeje quando usá-los e dentre as sugestões de atividade para ele, indicamos as seguintes opções:
+
+\begin{itemize}
+ \item Um encontro no estilo das monitorias das disciplinas de Cálculo e Geometria Analítica, na qual o foco são exercícios da disciplina. Essa proposta é mais adequada para encontros próximos as provas dessas disciplinas;
+ \item Resolução das questões adicionais propostas no seu material. Você pode selecionar algumas das questões dos capítulos que já foram discutidos e propor aos estudantes;
+\end{itemize}
+
+Evite pedir aos tutorados que resolvam muitas questões fora das horas da tutoria, pois isso pode se acumular com as atividades das disciplinas regulares e a tutoria pode virar um fardo extra ao invés de uma ajuda.
+
+\section{A rotina ideal}
+
+A lista abaixo descreve a rotina que esperamos para cada semana de tutoria. Obviamente variações podem ocorrer, mas checar a lista pode ajudá-lo a não esquecer de ações importantes e a planejar a sua preparação.
+
+\begin{enumerate}
+ \item Todo capítulo é iniciado com uma pequena avaliação diagnóstica. Essa avaliação deve ser resolvida pelos seus tutorados no final do encontro anterior, quando o capítulo anterior for finalizado;
+ \item Assim que os tutorados finalizarem a avaliação diagnóstica, fotografe o registro de progresso do capítulo que foi finalizado e as resolução para as questões diagnósticas;
+ \item Envie os registros de progresso para o professor que está orientando os tutores;
+ \item Resolva as questões do próximo capítulo leia as orientações para o tutor;
+ \item Corrija as questões diagnósticas e anote em que ponto do capítulo seguinte cada estudante deverá começar;
+ \item Durante as 3 horas de atividades, que podem estar distribuídas em 2 ou 3 encontros, os estudantes deverão resolver as questões do caderno;
+ \item Ao final do último encontro lembre-se de fotografar o registro de progresso, pedir que resolvam a avaliação diagnóstica para o próximo capítulo e fotografar essa resolução.
+\end{enumerate}
+
+\section{Estrutura do material}
+
+O material dos estudantes está estruturado da seguinte maneira:
+
+\begin{enumerate}
+ \item Apresentação
+ \item Pré-requisitos e Auto-avaliação inicial: explicando quais são os pré-requisitos do capítulo, que eventualmente precisam ser estudados antes dos encontros, e uma auto-avaliação sobre o quanto eles acreditam que sabem sobre alguns tópicos chave para o capítulo;
+ \item Avaliação diagnóstica: deve ser resolvida ao final do último encontro do capítulo anterior e te orientará sobre em qual ponto cada estudante deve começar;
+ \item Questões: onde se concentra a maior parte do conteúdo, formado por questões e por textos discutindo os tópicos em pauta. É imortante que os textos sejam lidos pelos estudantes, pois ali são feitas várias conexões fundamentais;
+ \item Rumo ao livro texto: uma seção com o objetivo de propor questões ou leituras que explicitamente conectem o trabalho deste material com livros-texto das disciplinas oficiais;
+ \item Gabarito
+ \item Registro de progresso: deve ser preenchida pelos estudantes ao final do período alocado para cada capítulo, fotografado por você e enviado ao professor coordenador;
+ \item Auto-avaliação final: oferecendo uma oportunidade para o estudante comparar a sua evolução e traçar metas de estudo.
+\end{enumerate}
+
+O seu material segue estrutura parecida, mas com alguns adicionais.
+
+\begin{enumerate}
+ \item O Quadro de orientação te ajuda a decidir em que ponto os estudantes devem começar cada capítulo de acordo com o desempenho nas questões diagnósticas. Você pode decidir não segui-lo por conta de especificidades dos estudantes e grupos, mas leve-o em conta antes de tomar essa decisão;
+ \item Ao longo das Questões, há comentários salientando aspectos importantes, erros esperados ou estratégias de intervenção para certas situações. É fundamental que essas sugestões sejam lidas e as questões resolvidas por você antes dos encontros;
+ \item Questões adiconais traz algumas questões que podem ser propostas aos estudantes que completarem o capítulo com muita antecedência. Use-as com moderação, pois a intenção não é que esse material represente mais um fardo na rotina de estudos dos ingressantes.
+\end{enumerate}
+
+Folheie o seu material para se familiarizar com ele e em caso de dúvidas, procure o professor coordenador. Bom trabalho!
+
+\subfile{cap1_tutor.tex} %Matrizes 2x2
+
+\subfile{cap2_tutor.tex} %Potenciais, exp e log
+
+%\subfile{cap3_estudante.tex} %Polinomios
+
+\subfile{cap4_tutor.tex} %trigonometria e vetores
+
+\subfile{cap5_tutor.tex} %troca de variaveis
+
+\subfile{cap6_tutor.tex} %reta e circunferencia
+
+\subfile{cap7_tutor.tex} %graficos
+ 
+%mudanca de formato no material
+
+\subfile{lista_1_tutor.tex} %revisao para integrais por partes
+
+\subfile{lista_2_tutor.tex} %identidades trigonometricas
+
+\subfile{lista_3_tutor.tex} %fracoes algebricas para fracoes parciais
+ 
+\end{document}
+

@@ -1,0 +1,248 @@
+\documentclass[main_estudante.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Troca de variáveis e composição de funções}
+
+\section{Questões diagnósticas}
+
+\begin{diagnostico}
+Resolva a equação $x^6-9x^3+8=0$.
+\end{diagnostico}
+
+\begin{diagnostico}
+Seja $f(x)=2x+1$ e $g(x)=3-x^2$.
+\begin{enumerate}[a)]
+  \item Qual é o valor de $f(g(1))$?
+  \item Qual é a expressão algébrica de $f(g(x))$?
+\end{enumerate}
+\end{diagnostico}
+
+\begin{diagnostico}
+Considere a função $h(x)=6x-9$.
+\begin{enumerate}[a)]
+  \item Obtenha $h^{-1}(x)$, ou seja, a função inversa de $h(x)$.
+  \item Qual é o valor de $h^{-1}(3)$?
+\end{enumerate}
+\end{diagnostico}
+
+\section{Gabarito}
+
+\textbf{Questão 1:} $1$ e $2$. \textbf{Questão 2:} a) $f(g(1)=5$, b) $f(g(x)=-2x^2+7$. \textbf{Questão 3:} a) $h^{-1}(x)=\frac{y+9}{6}$, b) $2$.
+
+\section{Quadro de orientação}
+
+\begin{center}
+ \begin{tabular}{|c c c |c|} 
+ \hline
+ 1 & 2A e 2B & 3A e 3B & Onde começar\\
+ \hline
+ C & E & E & Questão 4 \\ 
+ \hline
+ C & C & C & Questão 12 \\ 
+ \hline
+\end{tabular}
+\end{center}
+
+\section{Comentários iniciais}
+
+O grande objetivo deste capítulo é revisar troca de variáveis e composição de funções tendo em mente os usos que se faz destas para obter derivadas (via regra da cadeia) e integrais (via troca de variáveis). Seguindo a tonica dos capítulos anteriores, a ênfase não é na fluência com os procedimentos (isso pode ser feito nas listas de MA111) mas no fortalecimento mais conceitual.
+
+Ao final do capítulo, também revisitamos o conceito de função inversa também seguindo uma ênfase mais conceitual.
+
+O material conscientemente evita discsussões relacionadas a domínio e imagens pois a abordagem dada a funções aqui não segue uma rota formal. Caso necessário, o professor de MA111 deverá cubrir esses aspectos.
+
+\section{Questões comentadas}
+
+\begin{questao}
+Com base nas equações discutidas acima ($x^4-13x^2+36=0$ e e$t^2-13t+36=0$), responda os itens a seguir.
+\begin{enumerate}[a)]
+\item Obtenha os valores de $t$ que satisfazem a equação $t^2-13t+36=0$.
+\item Lembrando que a troca de variáveis que fizemos foi $x^2=t$, obtenha os valores de $x$ referentes aos valores de $t$ obtidos no item anterior.
+\item Você encontrou quatro valores para $x$ no item anterior (caso contrário, cheque suas respostas com a de seus colegas ou tutor). Verifique, substituindo em $x^4-13x^2+36=0$, que todos satisfazem essa equação.
+\end{enumerate}
+\end{questao}
+
+O objetivo desta questão é introduzir a ideia de troca de variáveis com um caso bastante simples. É importante que os estudantes entendam a diferença entre as soluções para a equação original e para a equação transformada.
+
+\begin{questao}
+Resolva cada uma das equações a seguir usando a troca de variáveis dada.
+\begin{enumerate}[a)]
+\item $(x^2+1)^2-6(x^2+1)+5=0$, usando a troca $t=x^2+1$.
+\item $x+\sqrt{x+2}=18$, usando a troca $a=\sqrt{x+2}$.
+\item $2^x-4^x=-2$, usando a troca $y=2^x$.
+\item $(x^2-5)^2-1=0$, usando uma troca a sua escolha.
+\end{enumerate}
+\end{questao}
+
+Questão para promover um pouco de prática com troca de variáveis, mas as questões levantam aspectos conceituais importantes:
+\begin{itemize}
+ \item O item a resulta em apenas 3 soluções, ao invés das 4 esperadas ($0$ é uma raiz dupla);
+ \item O item b envolve duas trocas diferentes ($a=\sqrt{x+2}$ e $x=a^2-2$);
+ \item O item c tem uma apresentação um pouco diferente que exige a percepção de $4^x$ como sendo igual a $(2^x)^2$. Além disso, um dos valores de $y$ não gera uma solução válida para a equação original.
+ \item O item d, além de não dar a troca, vai resultar em raízes não inteiras.
+\end{itemize}
+
+\begin{questao}
+Considere a equação $x^3+6x^2-9x-14=0$.
+\begin{enumerate}[a)]
+\item Qual troca de variáveis Cardano aplicaria a essa equação?
+\item Faça a troca de variáveis de Cardano e desenvolva âs potências para verificar se o resultado final tem o formato $py^3+qy+r=0$. Proceda com calma, pois eesse processo envolve bastante álgebra e pequenos erros podem comprometer a resolução.
+\end{enumerate}
+\end{questao}
+
+O argumento histórico por trás dessa questão visa apenas trazer um elemento potencialmente interessante. O objetivo central aqui é praticar um pouco manipulações algébricas em expressões polinomiais. Enfatize a importância de resolver a questão com calma, prestação atenção a cada etapa. Além disso, como os estudantes sabem o formato da equação que devem obter no final, eles podem verificar sozinhos se devem ter acertado (seria muita coincidência algum erro ainda resultar num expressão com o formato correto.
+
+\begin{questao}
+A fórmula $C=\frac{5(F-32)}{9}$ permite a conversão de temperaturas em Fahrenheit para Celsius. A fórmula $K=C+273$ permite a conversão de uma temperatura em Celsius para Kelvin.
+\begin{enumerate}[a)]
+\item Quanto é 50\degree Fahrenheit em Celsius?
+\item Quanto é 50\degree Fahrenheit em Kelvin?
+\item Quanto é 77\degree Fahrenheit em Kelvin?
+\item Obtenha uma fórmula que converta temperaturas Fahrenheit diretamente para Kelvin.
+\item Use essa fórmula para obter converter 23\degree Fahrenheit em Kelvin.
+\end{enumerate}
+\end{questao}
+
+Essa questão introduz composição de funções através de um exemplo contextualizado. Nesse caso, a contextualização facilita o entendimento dos significados dessa operação, mas também limita as possibilidades (por exemplo, não faria sentido obter a composta $C(K)$).
+
+\begin{questao}
+Responda aos itens abaixo considerando as duas funções usadas como exemplo logo acima.
+\begin{enumerate}[a)]
+\item Qual é o valor de $f(g(1))$?
+\item Para qual valor de $x$ temos $f(g(x))=53$?
+\item Obtenha uma expresão para $g(f(x))$.
+\item Qual é o valor de $g(f(1))$?
+\item Para qual valor de $x$ temos $g(f(x))=5$?
+\end{enumerate}
+\end{questao}
+
+O objetivo dessa questão é voltar para um contexto mais abstrato mas ainda procedendo com bastante calma para ter certeza de que o conceito de função composta foi assimilado.
+
+\begin{questao}
+Escreva as funções abaixo como a composição de duas funções a sua escolha. Indique tanto as novas funções como a oredem em que foram compostas para obter a função dada.
+\begin{enumerate}[a)]
+\item $a(x)=3+\cos^2(x)$
+\item $f(x)=\frac{1}{\sqrt{x-5}}$
+\item $p(x)=3 \cdot 2^{x-1}$
+\item $t(x)=(\sin(x)+1)(\sin(x)+2)$
+\end{enumerate}
+\end{questao}
+
+Esse tipo de exercício é importante para um bom uso da regra da cadeia. Cada item admite mais do que uma resposta e você pode incentivar a comparação com as soluções de colegas tendo em mente o critério ``qual dessas decomposições são mais fáceis de derivar isoladamente?'' ou apenas``você saberia derivar as novas funções obtidas?''. As respostas a essas perguntas também não são únicas, mas podem ajudar como critério de exclusão de algumas das possibilidades.
+
+\begin{questao}
+Rescreva as funções abaixo como a composição, multiplicação ou quociente de outras duas funções mais simples.
+\begin{enumerate}[a)]
+\item $f(x)=x^2 \cdot 3^x$
+\item $p(x)=\cos(x^2-1)$
+\item $g(x)=\frac{x+3}{x+4}$
+\item $t(x)=x^2\sin(x)$
+\item $m(x)=\frac{2^x}{1+2^x}$
+\end{enumerate}
+\end{questao}
+
+Além de oferecer mais um pouco de prática com a decomposição de funções, essa questão oferece uma oportunidade para considerar as diferenças entre produto e composição de funções, o que é fundamental para decidir qual estratégia usar para derivar uma função.
+
+O último item pode ser visto como uma composição envolvendo $2^x$ ou como um quociente. Cada opção tem suas vantagens em desvantagens relacionadas à dificuldade de calcular as derivadas das novas funções e à dificuldade de usar regra da cadeia, do produto ou do quociente.
+
+\begin{questao}
+Considere as funções $m(x)=2x-6$ e $n(x)=\frac{x}{2}+3$
+\begin{enumerate}[a)]
+\item Obtenha a expressão algébrica de $m(n(x))$.
+\item Obtenha a expressão algébrica de $n(m(x))$.
+\end{enumerate}
+\end{questao}
+
+Introdução de funções inversas com um exemplo simples, mas abstrato. Aqui, uma função ser inversa da outra significa a composição resultar na identidade, o que não é tão óbvio na interpretação a seguir (contextualizada), em que funções inversas são vistas como funções que fazem a transformação inversa uma da outra.
+
+\begin{questao}
+Utilize a expressão $C=\frac{5(F-32)}{9}$, dada no começo deste capítulo para converter uma temperatura em celsius para fahrenheits, para responder as questões abaixo.
+\begin{enumerate}[a)]
+\item Rescreva a fórmula acima isolando $F$ ao invés de $C$.
+\item Use a resposta do item anterior para obter o valor em fahrenheits para a temperatura de 35\degree Celsius.
+\end{enumerate}
+\end{questao}
+
+Nesse caso, o uso de um contexto facilita o entendimento de porquê o procedimento de isolar a outra variável funciona. Além disso, reforça a ideia de transformação inversa (de Celsius para Fahrenheit ou de Fahrenheit para Celsius).
+
+Não tenha pressa com essas duas últimas questões. Se julgar explore explicitamente a trnasformação ponto a ponto: se $f(x_0)=y_0$ então $f^{-1}(y_0)=x_0$. Isso pode ser feito facilmente convertendo e desconvertendo uma temperatura, mas o impacto deve ser maior com o exemplo abstrato: escolha um valor qualquer de $x$, aplique em $m(x)$, agora pegue esse resultado e aplique em $n(x)$ e você obterá $x$ novamente.
+
+\begin{questao}
+Verifique se a composição $C \circ F$ resulta na função identidade.
+\end{questao}
+
+Insista para que os estudantes resolvam essa questão.
+
+\begin{reflita}
+Antes de resolver a questão abaixo, descreva com suas palavras como você deve proceder para resolvê-lo do início até a resposta final, dada no forma $f^{-1}$. 
+\end{reflita}
+
+Essa questão é do tipo \textbf{Reflita}. Como antes, insista para que os estudantes a resolvam adequadamente, escrevendo o que fariam para resolver o item seguinte. Descrições completas são importantes para salientar aspectos que talvez eles mesmos não tenham notado. Note que a questão pede que a função inversa seja dada na forma $f^{-1}(x)$, portanto, após isolar a variável $x$ em termos de $y$, é necessário ajustar a nomenclatura.
+
+\begin{questao}
+Use a técnica discutida anteriormente para obter a função inversa das seguintes funções.
+\begin{enumerate}[a)]
+\item $f(x)=4x-8$.
+\item $g(x)=\frac{3}{x-1}+2$.
+\item $h(x)=3+log(2x)$.
+\item $p(x)=\sin(3x-10)$.
+\item $c(x)=2^{x+5}$.
+\end{enumerate}
+\end{questao}
+
+Os itens dessa questão não exigem grandes manipulações algébricas, mas dependem de os estudantes lembrarem quais são as inversas de funções como as trigonométricas e exponenciais. Isso foi tratado em capítulos anteriores, mas do ponto de vista de operações, não funções. Isso pode gerar dúvidas. Não tenha pressa e, caso necessário, gere mais exercícios com estrututura semelhante aos dados (evite execesso de manipulações algébricas) para que os estudantes possam praticar esse novo uso dessas operações.
+
+\section{Rumo ao livro texto}
+
+A proposta desta questão é aplicar explicitamente o que foi visto neste capítulo em um tópico da disciplina de Cálculo. Ela é simples do ponto de vista algébrico, mas a resolução neste momento deve oferecer uma conexão bastante explícitda entre as atividades da tutoria e da disciplina MA111.
+
+\section{Gabarito}
+
+\noindent\textbf{Questão 1:} a) $3$, b) $3\sqrt{3}/2$, c) $9\sqrt{3}/4$.
+
+\noindent\textbf{Questão 2:} a) $0,98$, b) $0,26$, c) $0,3$, d)$0,9$, e) $0,07$.
+
+\noindent\textbf{Questão 3:} a) $3,76$, b) $9,24$.
+
+\noindent\textbf{Questão 4:} a) $0,78$, b) $1,16$, c) $37\degree$, d) $30\degree$.
+
+\noindent\textbf{Questão 5:} a) $\sqrt{13}$, b) $2\sqrt{13}/13$ e $3\sqrt{13}/13$, c) $0,59$ e $34\degree$.
+
+\noindent\textbf{Questão 6:} a) $\Arrowvert V \Arrowvert = \sqrt{5}$ e $\Arrowvert U \Arrowvert = \sqrt{10}$, b) $63\degree$ e $18\degree$, c) $45\degree$.
+
+\noindent\textbf{Questão 7:} a) $(2,30;1,93)$, b) $(\sqrt{3};1,00)$.
+
+\noindent\textbf{Questão 8:} c) $\sqrt{10}/2$, d) $\frac{5}{2}$.
+
+\noindent\textbf{Questão 9:} a) $2,42$.
+
+\noindent\textbf{Questão 10:} a) $2.301$, b) $1.301$, c) $0.301$.
+
+\noindent\textbf{Questão 11:} $1,93$.
+
+\noindent\textbf{Questão 12:} b) $f^{-1}(x)=\frac{x+8}{4}$, c) $g^{-1}(x)=\frac{3}{x-2}+1$, d) $h^{-1}(x)=\frac{10^{x-3}}{2}$, e) $p^{-1}(x)=\frac{\arcsin(y)+10}{3}$, f) $c^{-1}(x)=log_2 (y)-5$.
+
+\section{Questões adicionais}
+
+Caso seja necessário, os exercícios 8, 9, 10, 18 e 19 da lista 3.9 do livro \sugestao{Matemática Básica} podem ser propostos. Todos eles enfatizam os tópicos que foram discutidos ao longo deste capítulo.
+
+\begin{adicional}
+Obtenha a derivada das funções $f(x)=\sin(x^2)$ e $g(x)=\sin^2(x)$.
+\end{adicional}
+
+Antes de sugerir essa questão, certifique-se que derivadas de funções trigonométricas já foram abordadas em Cálculo. Se desejar propor mais questões desse tipo, foque em exemplo que não resultem em muitas manipulações algébricas, assim os estudantes poderão focar atenção nas funções e nas interações entre elas.
+
+\begin{adicional}
+A forma algébrica explícita de algumas funções inversas são difíceis de obter. Esse é o caso, por exemplo, de algumas funções quadráticas como $i(x)=x^2-4x+3$ mas não é o caso de outras como $e(x)=2x^2-3$. Obtenha a função inversa das funções quadrática abaixo.
+\begin{enumerate}[a)]
+\item $e(x)=2x^2-3$
+\item $f(x)=(x-5)^2$
+\item $h(x)=x^2-4x+4$. Sugestão: tente transformá-la no formato do item anterior.
+\item $i(x)=x^2-4x+1$. Sugestão: tente transformá-la no formato do item anterior.
+\end{enumerate}
+\end{adicional}
+
+Essa questão deve ser vista como um desafio e dada apenas a estudantes que tiverem dominado os tópicos principais do capítulo. Ela não promove maior entendimento destes tópicos, apenas extende, em termos de dificuldade, as estratégias para obter a função inversa de uma função quadrática.
+
+\end{document}

@@ -1,0 +1,126 @@
+\documentclass[main_estudante.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Revisão para integrais por partes}
+
+\section{Comentários iniciais}
+
+Esse capítulo é inteiramente focado em como transformar frações algébricas (em que numerador e denominador são polinômios) de modo a rescrevê-las como uma soma de polinômios e frações em que o denominador seja um polinômio do primeiro grau.
+
+Esse processo faz parte da técnica chamada de integração por frações parciais, mas focaremos na transformação das frações, sem entrar em detalhes sobre como calcular as integrais. Isso deverá ser feito pelo professor de MA111.
+
+\section{Quando usar}
+
+Certifique-se de que o professor dos estudantes da sua turma esteja prestes a iniciar o tópico \textbf{integração por frações parciais} ou tenha acabado de iniciar. Esse é o momento para usar este capítulo.
+
+\section{Questões comentadas}
+
+\begin{questao}
+Considerando o numerador e o denominador da fração $\frac{x^3+5x}{x^2+3x+2}$ separadamente, responda:
+\begin{enumerate}[a)]
+\item Quais são as raízes de $x^2+3x+2$?
+\item Escreva $x^2+3x+2$ na forma fatorada.
+\item Quais são as raízes de $x^3+5x$?
+\item Escreva $x^3+5x$ na forma fatorada.
+\item Rescreva a fração com as formas fatoradas.
+\end{enumerate}
+\end{questao}
+
+Essa questão deve servir como um aquecimento, explorando propriedades básicas dos polinômios.
+
+\begin{questao}
+Efetue a divisão de ${x^3+5x}$ por ${x^2+3x+2}$. Caso você não se lembre exatamente como proceder, volte para a questão X do capítulo Y onde você pode ver um exemplo.
+\end{questao}
+
+Evite explicar o algoritmo da divisão de polinômios antes de os estudantes terem tentado entendê-lo a partir do material escrito.
+
+A explicação que segue a questão é conceitualmente muito importante. Certifique-se de que os estudantes a leram e entenderam. Se necessário, faça o caminho inverso para mostrar que a igualdade vale: multiplica o resultado da divisão pelo divisor e some o resto para obter o polinômio que foi dividido originalmente. Pode valer a pena sugerir mais algum exemplo (criados aleatoriamente entre polinômios de graus de 2 a 5) para os estudantes com dificuldade.
+
+\begin{questao}
+Para fins de prática, efetue a soma $\frac{3}{x+1}+\frac{4}{x+2}$.
+\end{questao}
+
+Essa questão pretende apenas confirmar que os estudantes se elmbram como efetuar essa soma. Se necessário, sugira alguns exemplos adicionais com o mesmo formato: números reais no numerador e polinômios do primeira grau no denominador.
+
+\begin{questao}
+Efetue a soma $\frac{A}{x+1}+\frac{B}{x+2}$ e escreva o numerador na forma de uma binômio, ou seja, no formato $mx+n$.
+\end{questao}
+
+A resposta esperada para essa questão é $\frac{(A+B)x+(2A+b)}{x^2+3x+2}$, ou seja, o numerador tem um formato pouco usual. Pode ser que seus estudantes tenham dificuldade em vislumbrar esse formato. Mostre que nele os termos do binômio ficam claros e, dessa forma, poderemos fazer a comparação da próxima questão.
+
+\begin{questao}
+Determine o valor de $A$ e $B$ para a igualdade de polinômios $(A+B)x+(2A+b)=12x+6$ seja satisfeita.
+\end{questao}
+
+Note que não é o valor de $x$ que deve ser determinado, mas sim o valor de $A$ e $B$ para que os polinômios dos dois lados da igualdade sejam idênticos.
+
+Isso feito, a questão foi resolvida. Você pode optar por calcular a integral de fato com seus estudantes se julgar adequado.
+
+As questões a seguir sintetizam o processo como um todo, mas sem o auxílio dos itens dividindo o processo em etapas curtas.
+
+\begin{questao}
+Transforme a fração $\frac{x^3+6x^2+11x+6}{x^2-2}$ de modo que seja uma soma de um polinômio com uma fração algébrica não imprópria.
+\end{questao}
+
+Nesse caso, não foi pedido ao estudante que obtenha as frações parciais. Se houver tempo, sugira que eles finalizem o processo até o final.
+
+\begin{questao}
+Transforme a fração $\frac{2x+1}{x^2+3x-4}$ em uma soma de frações cujos denominadores sejam binômios do tipo $ax+b$ e e numeradores sejam números reais.
+\end{questao}
+
+Essa questão não exige a realização da divisão de polinômios e parte diretamente para a obtenção das frações parciais.
+
+\begin{questao}
+Rescreva a fração $\frac{x^3+x}{x-1}$ no formato mais simples para integração que você puder.
+\end{questao}
+
+Nesse caso, a expressão obtida ao final da divisão de polinômios já terá denominador de grau 1 e numerador real, sendo no formato para simples possivel para o cálculo da integral.
+
+\begin{questao}
+Vamos transformar a fração $\frac{(x+5)(x+2)(x-2)(x-1)}{x^3+4x^2-x^2-4x}$ em uma soma que envolva frações com denominadores mais simples.
+\begin{enumerate}[a)]
+\item Fatore o denominador e rescreva a fração simplificando fatores, se possível.
+\item Desenvolva os fatores que sobraram no numerador e rescreva a fração.
+\item Como o grau do numerador é maior do que o do denominador, faça a divisão do numerador pelo denominador de modo a rescrever a fração dada como uma soma de um polinômio com uma fração com numerador de grau menor.
+\item Use o quociente e o resto obtido na questão acima para rescrever o numerador da fração inicial e simplificá-la, como feito após a questão 2. Qual é a parte fracionária da forma simplificada?
+\item Como a parte fracionária obtida tem numerador do primeiro grau e denominador do segundo grau que pode ser fatorado, iguale a parte fracionária a uma soma de frações do tipo $\frac{A}{mx+n}+\frac{B}{ux+v}$ usando os fatores restantes no denominador, como feito na questão 4. Quais são os valores de $A$ e $B$?
+\item Qual é a forma final da fração dada inicialmente?
+\end{enumerate}
+\end{questao}
+
+Essa última questão demanda todos os passos feitos ao longo das cinco primeiras questões. Se você julgar adequado, pode sugerir a alguns de seus estudantes que tentem fazer sem seguir os itens. Não esperamos que eles tenham decorado as etapas, mas entendido a necessidade e significado de cada uma delas. 
+
+\section{Comentários finais}
+
+Os casos tratados aqui têm uma característica em comum: os polinômios nos denominadores possuíam todas as raízes reais e não repetidas. Quando isso não for o caso, é necessário fazer alguns ajustes na técnica. Esses ajustes foram intencionalmente não abordados aqui, uma vez que o serão pelo professor de MA111. Caso algum estudante faça perguntas que envolvam estes casos, você pode checar os exemplos da seção 7.4 do livro \sugestao{Calculus}.
+
+Ao final das questões, sugerimos justamente a leitura de alguns exemplos dessa seção do livro que são semelhantes ao que foi feito ao longo do capítulo.
+
+\section{Gabarito}
+
+\noindent\textbf{Questão 1:} a) $3$, b) $3\sqrt{3}/2$, c) $9\sqrt{3}/4$.
+
+\noindent\textbf{Questão 2:} a) $0,98$, b) $0,26$, c) $0,3$, d)$0,9$, e) $0,07$.
+
+\noindent\textbf{Questão 3:} a) $3,76$, b) $9,24$.
+
+\noindent\textbf{Questão 4:} a) $0,78$, b) $1,16$, c) $37\degree$, d) $30\degree$.
+
+\noindent\textbf{Questão 5:} a) $\sqrt{13}$, b) $2\sqrt{13}/13$ e $3\sqrt{13}/13$, c) $0,59$ e $34\degree$.
+
+\noindent\textbf{Questão 6:} a) $\Arrowvert V \Arrowvert = \sqrt{5}$ e $\Arrowvert U \Arrowvert = \sqrt{10}$, b) $63\degree$ e $18\degree$, c) $45\degree$.
+
+\noindent\textbf{Questão 7:} a) $(2,30;1,93)$, b) $(\sqrt{3};1,00)$.
+
+\noindent\textbf{Questão 8:} c) $\sqrt{10}/2$, d) $\frac{5}{2}$.
+
+\noindent\textbf{Questão 9:} a) $2,42$.
+
+\noindent\textbf{Questão 10:} a) $2.301$, b) $1.301$, c) $0.301$.
+
+\noindent\textbf{Questão 11:} $1,93$.
+
+\noindent\textbf{Questão 12:} b) $f^{-1}(x)=\frac{x+8}{4}$, c) $g^{-1}(x)=\frac{3}{x-2}+1$, d) $h^{-1}(x)=\frac{10^{x-3}}{2}$, e) $p^{-1}(x)=\frac{\arcsin(y)+10}{3}$, f) $c^{-1}(x)=log_2 (y)-5$.
+
+\end{document}

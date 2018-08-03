@@ -1,0 +1,305 @@
+\documentclass[main_estudante.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Potências, equações exponenciais e logaritmos}
+
+\section{Questões diagnósticas}
+
+\begin{diagnostico}
+Escreva as expressões abaixo como uma única potência.
+\begin{enumerate}[a)]
+  \item $2^5 \cdot 2^3$
+  \item $\frac{5^{10}}{5^4}$
+  \item $8(2^{-15} \cdot 4^7)$
+\end{enumerate}
+\end{diagnostico}
+  
+\begin{diagnostico}
+Resolva as equações dadas abaixo.
+\begin{enumerate}[a)]
+  \item $5^{x+3}=25$
+  \item $6 \times 2^{3-2x}=\frac{3}{2}$
+\end{enumerate}
+\end{diagnostico}
+
+\begin{diagnostico}
+Use a aproximação $log_{10} 3 \approx 0,48$ para obter uo valor aproximado de $log_{10} 90$.
+\end{diagnostico}
+
+\section{Gabarito}
+
+\textbf{Questão 1:} a) $2^8$, b) $5^6$, c) $2^2$. \textbf{Questão 2:} a) $x=6$, b) $x=-1$, c) $x=-1.5=-\frac{3}{2}$.
+
+\section{Quadro de orientação}
+
+\begin{center}
+ \begin{tabular}{|c c c |c|} 
+ \hline
+ 1A e 1B e 1C & 2A e 2B & 2C & Onde começar\\
+ \hline
+ C & E & E & Questão 2 \\ 
+ \hline
+ C & C & E & Questão 3 \\ 
+ \hline
+ C & C & C & Questão 7 \\ 
+ \hline
+\end{tabular}
+\end{center}
+
+\section{Comentários iniciais}
+
+Neste capítulo, serão trabalhados conteúdos relacionados a equações exponenciais e logaritmos com algumas pitadas de função exponencial. O objetivo é garantir que os estudantes saibam as propriedades básicas desas duas operações. Você notará que os exercícios propostos não exploram encadeamentos muito longos de manipulações algébricas, como questões de vestibulares clássicos, mas sim casos básicos que serão encontrados frequentemente por esses estudantes ao longo de disciplinas de Cálculo.
+
+A ênfase aqui, portanto, não deve ser em resolver uma quantidade enorme de exercícios e praticar à exaustão todas as propriedades, nem de discutir igualdades intrincadas em que manipulações algébricas inusitadas são necessárias. Pelo contrário, a segurança em utilizar as propriedades deve ser o objetivo.
+
+\section{Questões comentadas}
+
+\begin{questao}
+Utilize as propriedades acima para transformar as expressões abaixo em novas expressões com o menor número de potências possível.
+\begin{enumerate}[a)]
+\item $2^5 \cdot 2^{11} \cdot 2^{-3}$
+\item $\frac{5^3 \cdot 5^5}{5^2}$
+\item $(3 \cdot 3^8)^2$
+\item $(\frac{a^7}{a^2})^{-1}$
+\item $4^3 \cdot 2^5$
+\end{enumerate}
+\end{questao}
+
+Essa questão trata das propriedades mais básicas das potências. Se os estudantes estverem com dificuldade para resolver estes itens, insista que leiam a seção 1.8 do livro \sugestao{Matemática Básica, volume 1}, na qua essas propridades são apesentadas e discutidas. Pode valer a pena pedir aos estudantes que tenham ido bem nas questões diagnósticas para que ajudem os colegas com dificuldade nessa questão.
+
+\begin{questao}
+Todas as resoluções mostradas abaixo contêm algum erro. Indique claramente o erro cometido e simplifique a expressão dada corretamente.
+\begin{enumerate}[a)]
+\item $3^5 \cdot 9^7  \longrightarrow (3 \cdot 9)^{5+7} = 27^{12}$
+\item $(2^3 \cdot 3^5)^2  \longrightarrow 2^3 \cdot 3^{5 \cdot 2} = 2^3 \cdot 3^{10}$
+\item $\frac{5^7}{5^{-3}}  \longrightarrow 5^{7-3}=5^4$
+\item $(a+b)^2 \longrightarrow a^2+b^2$
+\end{enumerate}
+\end{questao}
+
+A intenção dessa questão é reforçar as propriedades básicas através de um tipo diferente de pergunta, que exige um nível de consciência um pouco maior do estudante. Se achar adequado, peça que os estudantes descrevam textualmente onde está o erro ao responderem cada um dos itens.
+
+\begin{questao}
+Discuta com seus colegas como simplificar as expressões abaixo envolvendo números dados em notação científica.
+\begin{enumerate}[a)]
+\item $\frac{2,4  \cdot 10^5 \cdot 3  \cdot 10^8}{10^3}$
+\item $\frac{2,8  \cdot 10^{10} \cdot 6,3  \cdot 10^2}{2,1 \cdot 10^{-4}}$
+\item $\frac{1,2  \cdot 10^3}{3 \cdot 10^9}$
+\item \textbf{[Reflita]} Com base nas três respostas acima, descreva textualmente o processo para operar (multiplicação e divisão) com números dados em notação científica.
+\item A luz viaja a uma velocidade de $3 \cdot 10^8$ m/s e a menor distância da Terra a Júpiter é aproximadamente $6,3 \cdot 10^{11}$ metros. Quanto tempo um pulso de luz leva para percorrer essa distância?
+\end{enumerate}
+\end{questao}
+
+O objetivo desta questão não é discutir notação científica em detalhes. Acima de tudo, queremos que os estudantes estejam familiarizados com essa notação, que é de fato bastante comum no ensino superior (por isso o item d), e aumentem um pouco a fluência com algumas propriedades de potência.
+
+No item c seria necessário um ``ajuste'' ao valor que multiplica a potência de 10 para que a resposta esteja em notação científica, pois o esperado é que seja obtido $0,4 \cdot 10^{-6}$. Não é necessário ser rigoroso com a notação científica, mas essa oportunidade pode ser interessante para discutir propriedades de potência: $0,4 \cdot 10^{-6} = (4 \cdot 10^{-1}) \cdot 10^{-6} = 4 \cdot 10^{-1} \cdot 10^{-6} = 4 \cdot 10^{-7}$.
+
+No item d, peça aos estudantes que chequem se a descrição dada cobre o que foi feito nos itens a, b e c. Mais uma vez, o rigor é menos importante do que a completude da descrição.
+
+\begin{questao}
+Use a propriedade anterior para fazer o que se pede em cada item abaixo.
+\begin{enumerate}[a)]
+\item Escreva $\sqrt[3]{(x+1)^2}$ na forma de potência.
+\item Escreva $a^{\frac{3}{5}}$ na forma de raiz.
+\item Escreva $x^3 \cdot \sqrt{x}$ como uma única potência.
+\item Escreva $\frac{10^2}{\sqrt[3]{10}}$ como uma única raiz.
+\item Escreva $\sqrt{t} \cdot \sqrt[3]{t}$ como uma potência.
+\end{enumerate}
+\end{questao}
+
+Seguindo a tônica deste capítulo, o objetivo aqui nao é explorar casos super intrincados com diversas raízes, mas saber como usar a propriedade em questão para casos que serão comuns em exercícios de Cálculo.
+
+\begin{questao}
+Resolva as questões referentes à função exponencial sugeridas abaixo.
+\begin{enumerate}[a)]
+\item Sendo $f(x)=4^x$, obtenha $f(1)$, $f(2)$, $f(0)$, $f(-1)$ e $f(\frac{1}{2})$.
+\item Sendo $g(x)=4 \cdot 3^{2x-1}-5$, obtenha $g(1)$.
+\item Seja $h(x)=5^{2x+3}$, reescreva a função $h$ de modo que a variável $x$ apareça sozinha no expoente.
+\end{enumerate}
+\end{questao}
+
+O gráfico e as propriedades da função exponencial serão discutidas nas aulas da disciplina de Cálculo. O tópico foi trazido para este material para servir como contexto para um pouco mais de prática com potências e para retomar a notação de funções. Note que neste momento, o que se espera são apenas cálculos envolvendo potências.
+
+O terceiro item tem o intuito de introduzir a transformação $5^{2x+3}=5^3 \cdot (5^2)^x$. Essa transformação é importante para demonstrar algumas das propriedades da derivada de funções exponenciais.
+
+\begin{questao}
+Resolva as equações abaixo.
+\begin{enumerate}[a)]
+\item $2^{2x-1} = 2^5$
+\item $27 = 3^{5x-2}$
+\item $4^{x+1}=8^{3+x}$
+\item $a^{x^2-12}=a^{x}$
+\item $3-5 \cdot 2^{5-3x} = 23$
+\end{enumerate}
+\end{questao}
+
+Todas as equações acima podem ser resolvidas reduzindo os termos de cada lado da igualdade para potências da mesma base. O quarto item recai em uma equação quadrática e o último envolve somas e multiplicações que devem ser resolvidas antes de se obter uma equação com apenas duas potências na mesma base.
+
+\begin{questao}
+Considere a função exponencial dada por $f(x)=3 \cdot 2^x$.
+\begin{enumerate}[a)]
+\item Obtenha o valor de $x$ para que $f(x)=48$
+\item Determine o ponto em que $f(x)$ corta o eixo Y do plano cartesiano.
+\item Obtenha o valor de $x$ para que $f(x)=1.5$
+\end{enumerate}
+\end{questao}
+
+Estas questões, diferentemente das anteriores sobre função exponencial, recaem em equações. Todas podem ser resolvidas com técnicas equivalentes às que foram usadas na questão anterior. Note que a resposta do item b deve ser um ponto, ou seja, deve ser na forma $(x;y)$. No último item, pode ser útil usar $1,5=\frac{3}{2}$.
+
+\begin{questao}
+Use a calculadora do seu celular para obter o valor de $x_0$ que satisfaça os itens abaixo com uma cada depois decimal para a função $f(x)=10^x$.
+\begin{enumerate}[a)]
+\item Obtenha $x_0$ tal que $f(x_0)=50$
+\item Obtenha $x_0$ tal que $f(x_0)=200$
+\end{enumerate}
+\end{questao}
+
+O objetivo desta questão é preparar o terreno para a introdução dos logaritmos na próxima questão. Nesse momento, queremos que os estudantes notem a possibilidade de encontrar valores não inteiros para potências de modo que satisfaçam certas igualdades.
+
+O botão \^ aparece na maioria das calculadoras de celular se deitarmos a tela.
+
+\begin{questao}
+Calcule:
+\begin{enumerate}[a)]
+\item $log_4 16$
+\item $log_3 81$
+\item $log_{10} 100000$
+\item $log_2 \frac{1}{2}$
+\item $log_9 3$
+\end{enumerate}
+\end{questao}
+
+Note que os itens desta questão são simples. O objetivo é ter certeza de que os estudantes conhecem o conceito de logaritmo. Insista que leiam o texto de introdução à questão e os exemplos. Mesmo assim, talvez seja necessária alguma explicação adicional caso o conceito seja totalmente desconhecido. Você pode usar os exemplos e pequenas variações deles.
+
+Uma opção interessante é pedir aos estudantes que criem novos exemplos com algumas restrições: dada uma base (calcule 3 logaritmos na base 6), dado um resultado (crie 2 logaritmos cujo valor seja igual a 5) ou dado o logaritmando (calcule o log de 64 em duas bases diferentes). Por enquanto, se restrinja a valores inteiros.
+
+\begin{questao}
+Use a calculadora para obter
+\begin{enumerate}[a)]
+\item $log_{10} 200$ (compare com o resultado aproximado que você obteve anteriormente)
+\item $log_{10} 20$
+\item $log_{10} 2$
+\end{enumerate}
+\end{questao}
+
+Antes de introduzir as propriedades de logaritmos achamos interessante introduzir o uso da calculadora (por isso a escolha da base 10), pois o uso que se fazia dos logaritmos no passado era muito semelhante, mas através de tabelas. Mais do que aprender a usar o aplicativo, a nossa intenção é de que os estudantes interajam com a relação entre logaritmos e exponenciais, calculando um através do outro.
+
+\begin{questao}
+Note que se soubermos o valor de $log_{10} 2$, podemos obter o valor numérico dos três primeiros exemplos acima. Usando a aproximação $log_{10} 3 \approx 0.48$, obtenha os valores de:
+\begin{enumerate}[a)]
+\item $log_{10} 9$
+\item $log_{10} 30$
+\item $log_{10} 2700$
+\item $log_{10} 0.3$
+\item Use sua calculadora para obter uma aproximação para $log_{10} 5$ e então use a quarta propriedade acima para calcular $log_{3} 5$.
+\end{enumerate}
+\end{questao}
+
+Agora chegamos às propriedades dos logaritmos. Note que não se trata de uma lista longa para prática de cada uma das propriedades. Isso não significa negar a importância da prática visando fluência, mas o público que esperamos atingir com essas atividades são os ingressantes que tenham alguma familiaridade com esses conteúdo e precisam de um apoio para atingir um nível um pouco mais alto de conhecimento e para fazer a transição e conexão para o ensino superior.
+
+Se você concluir que os estudantes precisam de mais ajuda neste ponto, sugerimos a seção \sugestao{Propriedades dos logaritmos} do livro \sugestao{Matemática Básica volume 1} (página 478). Certifique-se de que os estudantes estão lendo as explicações e tentando ativamente compreender os problemas resolvidos (ao invés de apenas lendo as resoluções passivamente).
+
+\begin{reflita}
+ Use sua calculadora para obter calcular $10^{log_{10} 2}$ e $10^{log_{10} 3}$. Você consegue generalizar esse resultado e justificar porque ele é verdadeiro? Compare a sua generalização com a de seus colegas.
+\end{reflita}
+
+Insista que os estudantes respondam a essa questão por escrito e discutam com os colegas. O uso de calculadora para testar outros casos deve ser incentivado. Note que o resultado pode ser estendido para qualquer base (a base 10 foi utilizada apenas por ser mais comum em calculadoras).
+
+\begin{questao}
+Considere a função $P(t)=2 \cdot 10^t - 5$
+\begin{enumerate}[a)]
+\item Obtenha $P(0)$ e $P(3)$.
+\item Determine $t_0$ de modo que $P(t_0)=15$.
+\item Determine, com ajuda da calculadora, $t_1$ de modo que $P(t_1)=-1$.
+\item Utilize o valor de $log_{10} 2$ que você utilizou no item anterior e as propriedades do logaritmo para calcular $t_2$ de modo que $P(t_2)=27$.
+\end{enumerate}
+\end{questao}
+
+Essa última questão reúne todos os tópicos vistos neste capítulo sem trazer nenhuma novidade.
+
+\section{Rumo ao livro texto}
+
+As questões dessa seção são aplicações clássicas da função exponencial a problemas de crescimento cuja resolução exige o uso de logaritmos. Não é necessário insistir que os estudantes usem todas as propriedades de logaritmo ao longo da resolução, podendo parte do trabalho ser feito pela calculadora, pois mesmo assim as propriedades mais importantes serão necessárias.
+
+\begin{resolvida}
+Se uma população de bactérias começa com 100 bactérias e dobra a cada 3 horas, então o número total de bactérias após $t$ horas é dado por $n= f(t) = 100 \cdot 2^{t/3}$.
+\begin{enumerate}[a)]
+ \item Quando a população alcançará 5000 bactérias?
+ \item Encontre a inversa dessa função.
+\end{enumerate}
+\end{resolvida}
+
+Como você pode ver, no item b o conceito de função inversa é introduzido. Não há necessidade de se preocupar com restrições e questões de domínio neste ponto. O objetivo é que os estudantes compreendam a ideia de função inversa e saibam, em linhas gerais, como proceder para obtê-la.
+
+\begin{resolva}
+Quando o flash de uma câmera é disparado, a bateria imediatamente começa a carregar o capacitor do flash, que armazena energia elétrica de acordo com a equação $Q(t)=Q_0(1-2^(-1.4t))$, com $t$ medido em segundos.
+\begin{enumerate}[a)]
+ \item Quando tempo é necessário para que $Q$ seja igual a $90\%$ de $Q_0$? Use a calculadora para obter os logs necessários.
+ \item Encontre a inversa da função $Q(t)$.
+\end{enumerate}
+\end{resolva}
+
+Note que no item a não é dado um valor absoluto para a carga. Isso talvez gere aluma estranheza por parte dos estudantes.
+
+\section{Gabarito}
+
+\noindent\textbf{Questão 1:} a) $2^{13}$, b) $5^6$, c) $3^{18}$, d)$a^{-5}$, e) $2^{11}$.
+
+\noindent\textbf{Questão 2:} a) $3^{19}$, b) $2^6 \cdot 3^{10}$, c) $5^{10}$, d)$a^2+2ab+b^2$.
+
+\noindent\textbf{Questão 3:} a) $7,2 cdot 10^{7}$, b) $8,4 cdot 10^{16}$, c) $4 cdot 10^{-7}$, d) $2,1 cdot 10^{3}$.
+
+\noindent\textbf{Questão 4:} a) $(x+1)^{\frac{2}{3}}$, b) $\sqrt[5]{a^3}$, c) $x^{\frac{7}{2}}$, d) $\sqrt[3]{10^5}$, e) $\sqrt[6]{t^5}$.
+
+\noindent\textbf{Questão 5:} a) $4$, $16$, $1$, $\frac{1}{4}$, $2$, b) $7$, c) $h(x)=125 \cdot 25^x$.
+
+\noindent\textbf{Questão 6:} a) $x=3$, b) $x=1$, c) $x=-7$, d) $x=4 \text{ou} -3$, e) $x=1$.
+
+\noindent\textbf{Questão 7:} a) $x=4$, b) $(0;3)$, c) $x=-1$.
+
+\noindent\textbf{Questão 8:} a) $x_0 \approx 1,7$, b) $x_0 \approx 2,3$.
+
+\noindent\textbf{Questão 9:} a) $2$, b) $4$, c) $5$, d)$-1$, e) $1/2$.
+
+\noindent\textbf{Questão 10:} a) $2.301$, b) $1.301$, c) $0.301$.
+
+\noindent\textbf{Questão 11:} a) $0,96$, b) $1,48$, c) $3,44$, d)$-0,52$, e) $1,46$.
+
+\noindent\textbf{Questão 12:} a) $-3$ e $1995$, b) $t_0=1$, c)$0,3$, d) $1,2$.
+
+\section{Questões adicionais}
+
+\begin{adicional}
+O número $P$ de batérias em uma colônia com disponibilidade alta de recursos se comporta de acordo com a função $P(t)=30 \cdot 2^{0,2t}$, com $t$ dado em dias.
+\begin{enumerate}[a)]
+\item Qual é a população inicial de bactérias? (quando $t=0$).
+\item Qual é a população no quinto dia? E no décimo? E no décimo quinto?
+\item Em qual dia a população ultrapassará 1000 bactérias?
+\end{enumerate}
+\end{adicional}
+
+Um problema clássico de crescimento populacional. os estudantes não devem ter dificuldade com ele se tiverem resolvido adequadamente a seção Rumo ao livro-texto.
+
+\begin{adicional}
+Esboce o gráfico das funções $f(x)=log_{10} x$, $g(x)=log_{3} x$, $h(x)=log_{2} x,$ no mesmo eixo cartesiano. Escolha valores diferentes de $x$ para cada função de modo a facilitar os seus cálculos e use a calculadora se desejar.
+\begin{enumerate}[a)]
+\item Essas funções são crescentes ou decrescentes?
+\item Qual é o domínio dessas funções?
+\item Em que ponto cada uma delas corta o eixo X? E o eixo Y?
+\item Como você descreveria o comportamento dessas funções a medida que $x$ assume valores cada vez maiores?
+\end{enumerate}
+\end{adicional}
+
+O importante nesta questão não é traçar os gráficos rapidamente, mas explorar qualitativamente as propriedades dos gráficos. Sugira que os estudantes comecem fazendo uma tabela com o valor da função para diversos valores de $x$, depois marquem esses pontos com cores diferentes para cada função e então esbocem os gráficos. 
+
+Caso os estudantes tenham concluído as questões adicionais, o livro \sugestao{Matemática Básica volume 1} traz três opções interessantes que podem ser propostas de acordo com a sua percepção sobre o andamento das atividades:
+
+\begin{itemize}
+ \item A partir da questão 7 dos exercícios da seção 5.2, são propostos diversos problemas de aplicação da função exponencial;
+ \item As 9 primeiras questões dos exercícios da seção 5.3 são adequados para prática das propriedades dos logaritmos;
+ \item A questão 4 dos exercícios da seção 5.4 traz uma série longa de equações exponenciais em nível crescente de dificuldade.
+\end{itemize}
+
+
+\end{document}

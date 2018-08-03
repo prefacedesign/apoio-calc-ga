@@ -1,0 +1,164 @@
+\documentclass[10pt,openany]{book}
+
+%encoding
+%--------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage{gensymb} %simbolo de grau
+\usepackage{amssymb}
+%--------------------------------------
+ 
+%Portuguese-specific commands
+%--------------------------------------
+\usepackage[portuguese]{babel}
+%--------------------------------------
+
+\usepackage[shortlabels]{enumitem}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{subfiles} %suporte a multiplos arquivos
+\graphicspath{{img/}} %pasta das imagens
+\usepackage{fancyhdr} %para formatar o rodape
+
+%Rodape
+%---------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[CE,CO]{\textit{material em versão beta}}
+\fancyfoot[LE,RO]{\thepage} 
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+%---------------------------------------
+
+
+\usepackage{framed} %para o box
+\colorlet{shadecolor}{lightgray} %para o box
+ 
+%novos ambientes que eu criei
+%--------------------------------------
+\newtheorem*{teorema}{Teorema}
+\newtheorem{questao}{Questão}[chapter]
+\newtheorem{diagnostico}{Questão}
+\newtheorem*{reflita}{Reflita}
+\newtheorem*{resolvida}{Questão resolvida}
+\newtheorem*{resolva}{Questão do livro-texto}
+
+\DeclareTextFontCommand\sugestao{\textsc}
+%--------------------------------------
+
+%elementos visuais
+%--------------------------------------
+\usepackage{geometry} %margens
+ \geometry{
+ a5paper,
+ inner=15mm,
+ outer=10mm,
+ top=10mm,
+ bottom=15mm,
+ }
+
+\usepackage{titlesec} %titulos para as questoes
+\titleformat{\subsection}[display]{\bfseries}{}{}
+{ % before-code
+    \rule{\textwidth}{1pt}
+    \vspace{1ex}
+    \centering
+} 
+[ % after-code
+\vspace{-1ex}%
+\rule{\textwidth}{0.2pt}
+] 
+%--------------------------------------
+
+\title{Material do estudante - Tutoria MA111 e MA141}
+\author{Leonardo Barichello}
+\date{\today}
+
+
+
+\begin{document}
+
+
+
+\maketitle
+
+\chapter{Introdução}
+
+Esse material foi desenvolvido especificamente para aqueles estudantes que foram aprovados no vestibular ou no ENEM com uma nota em Matemática que sugere que eles terão dificuldades em serem aprovados nas disciplinas Cálculo Diferencial e Integral I e Geometria Analítica.
+
+\section{O que esperamos de você}
+
+\textbf{Vá com calma}. A quantidade de atividades propostas foi pensado para que todos tenham tempo de remover todas as questões. Portanto, não corra. Leia atentamente as questões e os textos explicativos antes e depois delas. Uma grande parte da aprendizagem esperada vem dessas explicações.
+ 
+\textbf{Seja ativo}. Ao ler o material, tenha certeza de que você entendeu o conteúdo. Volte e cheque as referências, refaça cálculos se for necessário e faça anotações. Jamais deixe de registrar o processo de resolução de uma questão de modo que você consiga relê-lo se desejar.
+ 
+\textbf{Pergunte}. Peça ajuda aos colegas e ao seu tutor caso não tenha conseguido entender alguma coisa. Mas, ao invés de respostas prontas, procure sugestões ou esclarecimentos que lhe permitam resolver as questões e entender os conceitos de maneira independente.
+
+\textbf{Registre o seu progresso}. Não deixe de registrar o seu progresso ao final de cada capítulo. Isso é importante para podermos avaliar o quão bem este material está funcionando e para que você não deixe de completar as atividades propostas.
+
+\textbf{Reflita}. Não apenas haverão questões explicitamente focadas em lhe fazer refletir sobre os tópicos discutidos, mas você tambem deverá pensar sobre o que você sabe, o quanto aprendeu e o que pode fazer para melhorar. Não menospreze essas oportunidades!
+
+\section{Estrutura do material}
+
+A maioria dos capítulos deste material, a partir do próximo, segue a mesma estrutura:
+
+\begin{enumerate}
+ \item Apresentação: explicando porque o tópico em questão foi escolhido para o material e em que ele deve te ajudar nas disciplinas de Cálculo Diferencial e Integral e Geometria Analítica;
+ \item Pré-requisitos e Auto-avaliação inicial: explicando quais são os pré-requisitos do capítulo, que eventualmente precisam ser estudados antes dos encontros, e oferecendo uma oportunidade para você refletir sobre o seu conhecimento em Matemática;
+ \item Avaliação diagnóstica: para que você inicie as atividades do capítulo em um ponto compatível com o seu conhecimento. Essa avaliação deve ser resolvida ao final do último encontro do capítulo anterior;
+ \item Questões: onde se concentra a maior parte do conteúdo, formado por questões e por texto discutindo os tópicos em pauta;
+ \item Rumo ao livro texto: com o objetivo de propor questões ou leituras que explicitamente conectem o trabalho que você acabou de fazer com o livros-texto das disciplinas oficiais;
+ \item Gabarito
+ \item Registro de progresso: para que você registre quais questões resolveu (não importa se certo ou errado). Essa seção é importante para que possamos acompanhar a implementação do projeto e aprimorar o material;
+ \item Auto-avaliação final: oferecendo uma oportunidade para você comparar a sua evolução e traçar metas de estudo.
+\end{enumerate}
+
+\section{Referências essenciais}
+
+Este material é bastante auto-contido, mas alguns outros livros serão referenciados tanto para sugerir leituras que expliquem tópicos não cobertos pelo material quanto para indicar leituras de aprofundamento ou continuidade.
+
+A lista a seguir contem todas as referências que serão usadas ao longo do material. Sugerimos que você tenha esses materiais disponíveis durante as atividades da tutoria. Todos odem ser encontrados na biblioteca ou na internet.
+
+\begin{itemize}
+ \item O livro digital \sugestao{Matemática Básica volume 1}, de Francisco Magalhães Gomes, professor do IMECC. Disponível em http://www.ime.unicamp.br/~chico
+ \item O livro digital \sugestao{Matrizes, Vetores e Geomtria Analítica}, de Reginaldo J. Santos. Disponível em www.mat.ufmg.br/~regi
+ \item O livro físico \sugestao{Álgebra Linear}, de José Luiz Boldrini e outros. Amplamente disponível na biblioteca.
+\end{itemize}
+
+Existem também diversos portais com vídeos abordando tópicos de matemática na internet. Enquanto vários deles são bons, alguns não são. A sugestão que fazemos é o Portal do Saber (portaldosaber.obmep.org.br). Ele se destaca pela organização, qualidade dos vídeos, recursos disponíveis e uniformidade do material.
+
+\section{Algumas palavras sobre o Ensino Superior}
+
+Aqui virá o texto da Adriane sobre a transição para o Ensino Superior.
+
+\newpage
+
+\subfile{cap1_estudante.tex} %Matrizes 2x2
+
+\subfile{cap2_estudante.tex} %Potenciais, exp e log
+
+%\subfile{cap3_estudante.tex} %Polinomios
+
+\subfile{cap4_estudante.tex} %trigonometria e vetores
+
+\subfile{cap5_estudante.tex} %troca de variaveis
+
+\subfile{cap6_estudante.tex} %reta e circunferencia
+
+\subfile{cap7_estudante.tex} %graficos
+
+%\subfile{cap8_estudante.tex} %desigualdades
+ 
+%mudanca de formato no material
+
+\subfile{lista_1_estudante.tex} %revisao para integrais por partes
+
+\subfile{lista_2_estudante.tex} %identidades trigonometricas
+
+\subfile{lista_3_estudante.tex} %fracoes algebricas para fracoes parciais
+ 
+\end{document}
+
