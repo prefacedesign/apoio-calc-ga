@@ -6,9 +6,9 @@
 
 \section{Apresentação}
 
-As disciplinas Cálculo Diferencial e Integral 1 e 2 tem como objeto central o conceito de função. Todas as definições e propriedades aprendidas ao longo dessas disciplinas visam construir duas transformações muito poderosas que podem ser aplicadas a funções: a derivação e a integração. Essas duas transformações emergiram durante o século XVI e permitiram um avanço enorme da matemática aplicada, impulsionando a revolução industral européia e o desenvolvimento de várias áreas da física, como a mecânica de Newton e o estudo das ondas.
+As disciplinas Cálculo Diferencial e Integral 1 e 2 têm como objeto central o conceito de função. Todas as definições e propriedades aprendidas ao longo dessas disciplinas visam construir duas transformações muito poderosas que podem ser aplicadas a funções: a derivação e a integração. Essas duas transformações emergiram durante o século XVI e permitiram um avanço enorme da matemática aplicada, impulsionando a revolução industral européia e o desenvolvimento de várias áreas da física, como a mecânica de Newton e o estudo das ondas.
 
-Dentro desse universo, algumas funções ocupam um lugar privilegiado por serem muito simples e versáteis. Obviamente essa simplicidade, que se releva em relação a outras funções, não significa que elas sejam fáceis para o estudante. A função exponencial é uma dessas funções: simples (para calcular derivadas e integrais) e verśateis (pode ser usada para descrever uma gama enorme de problemas).
+Dentro desse universo, algumas funções ocupam um lugar privilegiado por serem muito simples e versáteis. Obviamente essa simplicidade não significa que elas sejam fáceis para o estudante. A função exponencial é uma dessas funções: simples (para calcular derivadas e integrais) e verśateis (podem ser usada para descrever uma gama enorme de problemas).
 
 O objetivo deste capítulo é justamente revisitar os conteúdos que servem de fundamento para o estudo das funções exponenciais: as propriedades da potênciação, a resolução de equações exponenciais e, finalmente, o logaritmo.
 
@@ -73,8 +73,9 @@ Lembre-se de checar com seu tutor em qual questão você deve começar.
 
 \subsection*{Primeiras propriedades}
 
-A interpretação de $a^n$ como sendo o produto do número $a$ por ele mesmo $n$ vezes é um pouco limitada, pois só funciona para valores inteiros positivos de $n$, mas nos permite obter e interpretar as propriedades mais básicas da potenciação. Se você não está familiarizado com as propriedades listadas abaixo, sugerimos que leia a seção 1.8 do livro \sugestao{Matemática Básica, volume 1} de Francisco Magalhães Gomes até a página 70 e então volte para esta questão.
+A interpretação de $a^n$ como sendo o produto do número $a$ por ele mesmo $n$ vezes é um pouco limitada, pois só funciona para valores inteiros positivos de $n$, mas nos permite obter e interpretar as propriedades mais básicas da potenciação. Se você não está familiarizado com as propriedades listadas abaixo, sugerimos que leia a seção 1.8 do livro \sugestao{Matemática Básica, volume 1} até a página 70 e então volte para esta questão.
 
+\begin{shaded*}
 \begin{itemize}
  \item Produto de potências: $a^n \cdot a^m = a^{n+m}$
  \item Divisão de potências: $\frac{a^n}{a^m} = a^{n-m}$
@@ -82,6 +83,7 @@ A interpretação de $a^n$ como sendo o produto do número $a$ por ele mesmo $n$
  \item Elevado a zero: $a^0 = 1$
  \item Potência negativa: $a^{-n} = \frac{1}{a^n}$
 \end{itemize}
+\end{shaded*}
 
 As propriedades acimas podem ser verificadas rapidamente com exemplos numéricos e demonstradas para o caso de expoentes inteiros positivos. Porém, elas valem para quaisquer expoentes e bases reais, contanto que a base seja positiva.
 
@@ -110,7 +112,7 @@ Todas as resoluções mostradas abaixo contêm algum erro. Indique claramente o 
 
 \subsection*{Notação científica}
 
-Notação científica nada mais é do que uma forma de representar nuúmeros especialmente conveniente quando os números envolvidos são muito grandes ou muito pequenos. Por exemplo, ao invés de escrevermos $3000000$ podemos escrever simplesmente $3 \cdot 10^6$. Note que checar a potência do $10$ na segunda forma é bem mais eficiente do que contar os zeros na primeira. O mesmo pode ser feito com números muito pequenos como $0,000000000002$, que pode ser escrito como $2 \cdot 10^{-12}$. Lembre-se que $10^{-12} = \frac{1}{10^12}$, ou seja, $2 \cdot 10^{-12} = \frac{2}{10^12} = 0,000000000002$.
+Notação científica nada mais é do que uma forma de representar números especialmente conveniente quando os números envolvidos são muito grandes ou muito pequenos. Por exemplo, ao invés de escrevermos $3000000$ podemos escrever simplesmente $3 \cdot 10^6$. Note que checar a potência do $10$ na segunda forma é bem mais eficiente do que contar os zeros na primeira. O mesmo pode ser feito com números muito pequenos como $0,000000000002$, que pode ser escrito como $2 \cdot 10^{-12}$. Lembre-se que $10^{-12} = \frac{1}{10^12}$, ou seja, $2 \cdot 10^{-12} = \frac{2}{10^12} = 0,000000000002$.
 
 Como último exemplo, vejamos como representar $0,037$. Poderíamos escrever como $37 \cdot 10^{-3}$, porém, padronizou-se utilizar sempre um número entre 1 e 10 fora da potência, o que não é o caso do 37. Portanto, $0,037$ é comumente rescrito como $3,7 \cdot 10^{-2}$.
 
@@ -120,7 +122,7 @@ Por utilizar potências de $10$ intensamente, notação científica se encaixa b
 Discuta com seus colegas como simplificar as expressões abaixo envolvendo números dados em notação científica.
 \begin{enumerate}[a)]
 \item $\frac{2,4  \cdot 10^5 \cdot 3  \cdot 10^8}{10^3}$
-\item $\frac{2,8  \cdot 10^{10} \cdot 6,3  \cdot 10^2}{2,1 \cdot 10^-4}$
+\item $\frac{2,8  \cdot 10^{10} \cdot 6,3  \cdot 10^2}{2,1 \cdot 10^{-4}}$
 \item $\frac{1,2  \cdot 10^3}{3 \cdot 10^9}$
 \item A luz viaja a uma velocidade de $3 \cdot 10^8$ m/s e a menor distância da Terra a Júpiter é aproximadamente $6,3 \cdot 10^{11}$ metros. Quanto tempo um pulso de luz leva para percorrer essa distância?
 \end{enumerate}
@@ -143,11 +145,11 @@ x &= \sqrt{a} && \text{portanto: } a^\frac{1}{2} = \sqrt{a} \\
 
 Veja que se admitirmos as propriedades básicas da potenciação no contexto de expoentes fracionários, somos levados à conclusão de que $a^\frac{1}{2} = \sqrt{a}$. Essa propriedade pode ser generalizada para o seguinte:
 
-\begin{itemize}
- \item Potências fracionárias: $a^\frac{n}{m}  = \sqrt[m]{a^n}$
-\end{itemize}
+\begin{shaded*}
+ Potências fracionárias: $a^\frac{n}{m}  = \sqrt[m]{a^n}$, por exemplo: $3^{\frac{2}{5}}=\sqrt[5]{3^2}$
+\end{shaded*}
 
-Essa propriedade conecta raízes à potências e será muito útil quando você estiver calculando derivadas e integrais envolvendo raízes.
+Essa propriedade conecta raízes a potências e será muito útil quando você estiver calculando derivadas e integrais envolvendo raízes.
 
 \begin{questao}
 Use a propriedade anterior para fazer o que se pede em cada item abaixo.
@@ -162,7 +164,7 @@ Use a propriedade anterior para fazer o que se pede em cada item abaixo.
 
 \subsection*{Função exponencial}
 
-Funções exponenciais são funções em que a variável aparece na potência como em $f(x)=2^x$. Essa é uma das funções exponenciais mais simples, mas versões mais sofisticadas como $g(x)=4 \cdot 3^(2x-1)-5$ ainda se encaixam nessa mesma família de funções e possuem comportamento muito parecido com $f(x)$.
+Funções exponenciais são funções em que a variável aparece na potência como em $f(x)=2^x$. Essa é uma das funções exponenciais mais simples, mas versões mais sofisticadas como $g(x)=4 \cdot 3^{(2x-1)-5}$ ainda se encaixam nessa mesma família de funções e possuem comportamento muito parecido com $f(x)$.
 
 \begin{questao}
 Resolva as questões referentes à função exponencial sugeridas abaixo.
@@ -195,7 +197,7 @@ Considere a função exponencial dada por $f(x)=3 \cdot 2^x$.
 \begin{enumerate}[a)]
 \item Obtenha o valor de $x$ para que $f(x)=48$
 \item Determine o ponto em que $f(x)$ corta o eixo Y do plano cartesiano.
-\item Obtenha o valor de $x$ para que $f(x)=1.5$
+\item Obtenha o valor de $x$ para que $f(x)=1,5$
 \end{enumerate}
 \end{questao}
 
@@ -361,7 +363,7 @@ Usando a notação de funções, podemos escrever $t(n) = 3 \cdot log_2 (\frac{n
 A próxima questão, pra você resolver, foi adaptada do livro Cálculo, de James Stewart, seção 1.6.
 
 \begin{resolva}
-Quando o flash de uma câmera é disparado, a bateria imediatamente começa a carregar o capacitor do flash, que armazena energia elétrica de acordo com a equação $Q(t)=Q_0(1-2^(-1.4t))$, com $t$ medido em segundos.
+Quando o flash de uma câmera é disparado, a bateria imediatamente começa a carregar o capacitor do flash, que armazena energia elétrica de acordo com a equação $Q(t)=Q_0(1-2^{-1.4t})$, com $t$ medido em segundos.
 \begin{enumerate}[a)]
  \item Quando tempo é necessário para que $Q$ seja igual a $90\%$ de $Q_0$? Use a calculadora para obter os logs necessários.
  \item Encontre a inversa da função $Q(t)$.
