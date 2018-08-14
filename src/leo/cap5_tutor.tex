@@ -84,14 +84,29 @@ Questão para promover um pouco de prática com troca de variáveis, mas as ques
 \end{itemize}
 
 \begin{questao}
-Considere a equação $x^3+6x^2-9x-14=0$.
+Faça uma troca de variável que mude as expressões abaixo para um formato que você considere mais simples para manipulações algébricas. Não se esqueça de indicar a troca utilizada.
 \begin{enumerate}[a)]
-\item Qual troca de variáveis Cardano aplicaria a essa equação?
-\item Faça a troca de variáveis de Cardano e desenvolva âs potências para verificar se o resultado final tem o formato $py^3+qy+r=0$. Proceda com calma, pois eesse processo envolve bastante álgebra e pequenos erros podem comprometer a resolução.
+\item $\frac{sqrt{4+x}-2}{x}$
+\item $x \cdot \sin(\frac{1}{x})$
+\item $\sqrt{x} \cdot log x$
 \end{enumerate}
 \end{questao}
 
-O argumento histórico por trás dessa questão visa apenas trazer um elemento potencialmente interessante. O objetivo central aqui é praticar um pouco manipulações algébricas em expressões polinomiais. Enfatize a importância de resolver a questão com calma, prestação atenção a cada etapa. Além disso, como os estudantes sabem o formato da equação que devem obter no final, eles podem verificar sozinhos se devem ter acertado (seria muita coincidência algum erro ainda resultar num expressão com o formato correto.
+A primeira troca se parece bastante com  exemplo feito anteriormente, entretanto, permite uma simplificação extra ao final. Se a trocar realizada for $t=\sqrt{4-x}$, a expressão obtida será $\frac{t-2}{t-4}$ que, por sua vez, pode ser simplificada da seguinte maneira:$\frac{t-2}{t-4}\frac{t-2}{(t-2)(t+2)=\frac{1}{t+2}}$. Não é fundamental que os estudantes notem essa última simplificação, já que este não é o foco deste capítulo, mas você pode chamar a atenção para esse aspecto caso julgue adequado.
+
+O item b depende da percepção de que a expressão $\sin(x)/x$ costuma ser útil no cálculo de limites, portanto, vale a pena ``forçar'' a sua ocorrência.
+
+Por fim, apesar de o item c permitir poucas simplificações, uma troca que faça com que a potência aparece no logaritmando pode ser útil, já que logaritmos permitem a ``remoção'' de potências. É esperado que estudantes fiquerm hesitantes nesse item, por acharem que a trocar de variável não vai simplificar substancialmente a expressão. Mostre que a troca $t=\sqrt{x}$ elimina uma raiz acrescentando apenas uma multiplicação por número real.
+
+%\begin{questao}
+%Considere a equação $x^3+6x^2-9x-14=0$.
+%\begin{enumerate}[a)]
+%\item Qual troca de variáveis Cardano aplicaria a essa equação?
+%\item Faça a troca de variáveis de Cardano e desenvolva âs potências para verificar se o resultado final tem o formato $py^3+qy+r=0$. Proceda com calma, pois eesse processo envolve bastante álgebra e pequenos erros podem comprometer a resolução.
+%\end{enumerate}
+%\end{questao}
+
+%O argumento histórico por trás dessa questão visa apenas trazer um elemento potencialmente interessante. O objetivo central aqui é praticar um pouco manipulações algébricas em expressões polinomiais. Enfatize a importância de resolver a questão com calma, prestação atenção a cada etapa. Além disso, como os estudantes sabem o formato da equação que devem obter no final, eles podem verificar sozinhos se devem ter acertado (seria muita coincidência algum erro ainda resultar num expressão com o formato correto.
 
 \begin{questao}
 A fórmula $C=\frac{5(F-32)}{9}$ permite a conversão de temperaturas em Fahrenheit para Celsius. A fórmula $K=C+273$ permite a conversão de uma temperatura em Celsius para Kelvin.
@@ -111,7 +126,6 @@ Responda aos itens abaixo considerando as duas funções usadas como exemplo log
 \begin{enumerate}[a)]
 \item Qual é o valor de $f(g(1))$?
 \item Para qual valor de $x$ temos $f(g(x))=53$?
-\item Obtenha uma expresão para $g(f(x))$.
 \item Qual é o valor de $g(f(1))$?
 \item Para qual valor de $x$ temos $g(f(x))=5$?
 \end{enumerate}
@@ -199,29 +213,27 @@ A proposta desta questão é aplicar explicitamente o que foi visto neste capít
 
 \section{Gabarito}
 
-\noindent\textbf{Questão 1:} a) $3$, b) $3\sqrt{3}/2$, c) $9\sqrt{3}/4$.
+\noindent\textbf{Questão 1:} a) $9$ e $4$, b) $\pm3$ e $\pm2$.
 
-\noindent\textbf{Questão 2:} a) $0,98$, b) $0,26$, c) $0,3$, d)$0,9$, e) $0,07$.
+\noindent\textbf{Questão 2:} a) $0$, $2$ e $-2$, b) $14$ e $23$, c) $1$, d) $\pm2$, $\pm\sqrt{6}$.
 
-\noindent\textbf{Questão 3:} a) $3,76$, b) $9,24$.
+\noindent\textbf{Questão 3:} a) $\frac{1}{t+2}$, b) $\frac{\sin(t)}{t}$, com $t=1/x$, c) $2t \cdot log(t)$, com $t=\sqrt{x}$.
 
-\noindent\textbf{Questão 4:} a) $0,78$, b) $1,16$, c) $37\degree$, d) $30\degree$.
+\noindent\textbf{Questão 4:} a) $x=y-2$, b) $y^3-21y+20=0$.
 
-\noindent\textbf{Questão 5:} a) $\sqrt{13}$, b) $2\sqrt{13}/13$ e $3\sqrt{13}/13$, c) $0,59$ e $34\degree$.
+\noindent\textbf{Questão 5:} a) $10\degree$ celsius, b) $283$ kelvin, c) $298$ kelvin, d) $K=\frac{5(F-32)}{9}+273$, e) $267$ kelvin.
 
-\noindent\textbf{Questão 6:} a) $\Arrowvert V \Arrowvert = \sqrt{5}$ e $\Arrowvert U \Arrowvert = \sqrt{10}$, b) $63\degree$ e $18\degree$, c) $45\degree$.
+\noindent\textbf{Questão 6:} a) $13$, b) $x=2$, c) $5^5$, d) $x=-1$.
 
-\noindent\textbf{Questão 7:} a) $(2,30;1,93)$, b) $(\sqrt{3};1,00)$.
+\noindent\textbf{Questão 7:} a) $a(x)=b(c(x))$, $b(x)=3+x^2$ e $c(x)=cos(x)$, b) $f(x)=g(h(x))$, $g(x)=1/x$ e $h(x)=\sqrt{x-5}$, c) $p(x)=q(r(x))$, $q(x)=3.2^x$ e $r(x)=x-1$, d) $t(x)=u(v(x))$, $u(x)=x(x+1)$ e $v(x)=sen(x)+1$.
 
-\noindent\textbf{Questão 8:} c) $\sqrt{10}/2$, d) $\frac{5}{2}$.
+\noindent\textbf{Questão 8:} a) $f(x)=g(x).h(x)$, $g(x)=x^2$ e $h(x)=3^x$, b) $p(x)=q(r(x))$, $q(x)=\cos(x)$ e $r(x)=x^2-1$, c) $g(x)=h(x)/i(x)$, $h(x)=x+3$ e $i(x)=x+4$, d) $t(x)=u(x).v(x)$, $u(x)=x^2$ e $v(x)=sen(x)+1$, e) $m(x)=n(o(x))$, $n(x)=x/(1+x)$ e $o(x)=2^x$.
 
-\noindent\textbf{Questão 9:} a) $2,42$.
+\noindent\textbf{Questão 9:} a) $m(n(x))=x$, b) $n(m(x))=x$.
 
-\noindent\textbf{Questão 10:} a) $2.301$, b) $1.301$, c) $0.301$.
+\noindent\textbf{Questão 10:} a) $F=\frac{9C}{5}+32$, b) $95\degree$ fahrenheit.
 
-\noindent\textbf{Questão 11:} $1,93$.
-
-\noindent\textbf{Questão 12:} b) $f^{-1}(x)=\frac{x+8}{4}$, c) $g^{-1}(x)=\frac{3}{x-2}+1$, d) $h^{-1}(x)=\frac{10^{x-3}}{2}$, e) $p^{-1}(x)=\frac{\arcsin(y)+10}{3}$, f) $c^{-1}(x)=log_2 (y)-5$.
+\noindent\textbf{Questão 12:} a) $f^{-1}(x)=\frac{x+8}{4}$, b) $g^{-1}(x)=\frac{3}{x-2}+1$, c) $h^{-1}(x)=\frac{10^{x-3}}{2}$, d) $p^{-1}(x)=\frac{\arcsin(y)+10}{3}$, e) $c^{-1}(x)=log_2 (y)-5$.
 
 \section{Questões adicionais}
 
