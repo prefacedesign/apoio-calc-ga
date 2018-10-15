@@ -56,27 +56,60 @@
 %--------------------------------------
 \setmainfont{Spectral}
 \linespread{1.10} %vira uma line height de 13.228pt
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{13.228pt}
+
+\setsansfont{Archivo}[
+  FontFace={archivor}{n}{Font=* Regular},
+  FontFace={archivom}{n}{Font=* Medium},
+  FontFace={archivosb}{n}{Font=* SemiBold},
+  FontFace={archivob}{n}{Font=* Bold},
+]
+
+\newfontfamily\ArchivoBlackFourteen[SizeFeatures={Size=14}]{Archivo Black}
+\newfontfamily\ArchivoBlackTen[SizeFeatures={Size=10}]{Archivo Black}
+
+
+
+% um módulo = 24.70pt
+% uma linha = 13.228pt
 
 \usepackage{geometry} %margens
+% \geometry{
+% a5paper,
+% inner=122.5pt,
+% outer=122.5pt,
+% top=39.684pt,
+% bottom=52.912pt,
+% }
+ 
  \geometry{
  a5paper,
- inner=15mm,
- outer=10mm,
- top=10mm,
- bottom=15mm,
+ inner=86.45pt,
+ outer=86.45pt,
+ top=39.684pt,
+ bottom=52.912pt,
  }
 
+
 \usepackage{titlesec} %titulos para as questoes
-\titleformat{\subsection}[display]{\bfseries}{}{}
-{ % before-code
-    \rule{\textwidth}{1pt}
-    \vspace{1ex}
-    \centering
-} 
-[ % after-code
-\vspace{-1ex}%
-\rule{\textwidth}{0.2pt}
-] 
+
+
+\titleformat{name=\section}{\ArchivoBlackFourteen }{\thesection}{0em}{\hspace{-49.4pt}\MakeUppercase} %2 módulos
+\titleformat{name=\subsection}{\ArchivoBlackTen}{\thesection}{0em}{} %2 módulos
+
+
+%\titleformat{\subsection}[display]{\bfseries}{}{}
+%{ % before-code
+%    \rule{\textwidth}{1pt}
+%    \vspace{1ex}
+%    \centering
+%} 
+%[ % after-code
+%\vspace{-1ex}%
+%\rule{\textwidth}{0.2pt}
+%] 
 %--------------------------------------
 
 \title{Material do estudante - Tutoria MA111 e MA141}
