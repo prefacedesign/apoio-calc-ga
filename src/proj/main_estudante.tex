@@ -74,6 +74,8 @@
 
 \newfontfamily\ArchivoBlackFourteen[SizeFeatures={Size=14}]{Archivo Black}
 \newfontfamily\ArchivoBlackTen[SizeFeatures={Size=10}]{Archivo Black}
+\newfontfamily\ArchivoMediumTitle[SizeFeatures={Size=36}]{Archivo}
+\newfontfamily\BioRhymeExpandedChapter[SizeFeatures={Size=170}]{BioRhyme Expanded}
 \usepackage[euler-digits,euler-hat-accent]{eulervm}
 \usepackage[normalem]{ulem}
 
@@ -103,8 +105,7 @@
 \usepackage{titlesec} %titulos para as questoes
 
 
-\titleformat{name=\section}{\ArchivoBlackFourteen }{\thesection}{0em}{\hspace{-2\gridM}\color{titlecolor}\MakeUppercase} %2 módulos
-\titleformat{name=\subsection}{\ArchivoBlackTen}{\thesection}{0em}{} %2 módulos
+
 
 %Fazendo as caixinhas de exemplo
 \newlength{\identacao}
@@ -125,6 +126,41 @@
 \leftskip=\identacao
 \rightskip=\identacao}{\end{tcolorbox}}
 
+
+\titleformat{name=\subsection}{\ArchivoBlackTen}{\thesection}{0em}{} %2 módulos ====>>> Muito estranho se desloca prá baixo ele ferra com a divisória
+
+\def\divisoria{\bgroup \markoverwith{\lower3.5\p@\hbox{\sixly \color{titlecolor} \char58}}\ULon}
+\font\sixly=lasyb10
+\def\divisoriapadrao{\divisoria{\hspace{14\gridM}}}
+
+\titleformat{name=\section}{\ArchivoBlackFourteen}{}{0em}{
+{\hspace{-1pt}\divisoriapadrao \vspace{10pt}}\linebreak
+\raggedright
+\leftskip=-\identacao
+\rightskip=-\identacao
+\parindent=0pt
+\hangindent=0pt
+\color{titlecolor}\MakeUppercase
+} %2 módulos
+
+
+{
+
+\baselineskip15pt
+\lineskiplimit-20pt
+
+}
+
+
+\titleformat{name=\chapter}[hang]{}{}{0em}{
+	{\color{titlecolor}\BioRhymeExpandedChapter\hspace{-2.5\gridM}\thechapter\linebreak}
+	\linebreak\ArchivoMediumTitle
+} %2 módulos
+\newcommand{\hsp}{\hspace{20pt}}
+\usepackage{blindtext}
+%\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{titlecolor}{|}\hsp}{0pt}{\Huge\bfseries}
+
+%
 
 
 %\titleformat{\subsection}[display]{\bfseries}{}{}
@@ -155,18 +191,28 @@
 
 Este material foi desenvolvido especificamente para os estudantes que foram aprovados em algum curso de Exatas tendo obtido nota em Matemática no vestibular ou no ENEM abaixo do ideal.
 
+{
+{
+	\color{titlecolor}
+	\BioRhymeExpandedChapter
+	\baselineskip-80pt
+	\lineskiplimit-1000pt
+	
+	L
+}	
+	\ArchivoMediumTitle
+	\setlength{\parskip}{0}
+	\vspace{-40pt}
+	\par orem ipsum sit dolor amet
+
+}
+
 A experiência mostra que esses estudantes provavelmente terão dificuldades nas duas disciplinas de Matemática que são obrigatórias em praticamente todos os cursos de Exatas: Cálculo Diferencial e Integral I e Geometria Analítica. Com isso em mente, a Unicamp criou a iniciativa Tutoria em Matemática. Essa iniciativa visa oferecer suporte especificamente concebido para esses estudantes de modo a facilitar a transição entre o Ensino Médio e o Ensino Superior.
 
 Temos três grandes objetivos com esse projeto. Primeiro, reforçar alguns tópicos matemáticos importantes do Ensino Médio. Segundo, reforçar a conexão entre o que você aprendeu nos últimos anos com o que será ensinado nessas disciplinas. Terceiro, criar um espaço para que o estudante estude ativamente com suporte de um tutor.
 
 A tutoria consiste em 3 horas de atividades semanais (cheque no seu horário como elas estão distribuídas), sempre em pequenos grupos acompanhados por um tutor. Todos os encontros seguirão atividades propostas em cadernos especialmente desenvolvidos de acordo com o objetivo da iniciativa e acompanhando de perto o conteúdo das disciplinas principais.
 
-
-\def\divisoria{\bgroup \markoverwith{\lower3.5\p@\hbox{\sixly \color{titlecolor} \char58}}\ULon}
-\font\sixly=lasyb10
-\def\divisoriapadrao{\hspace{-2\gridM}\divisoria{\hspace{14\gridM}}}
-
-\divisoriapadrao
 \section{TESTES}
 
 \lipsum[1]
@@ -184,8 +230,7 @@ $$\begin{pmatrix} 2 && 1 \\ -3 && 5 \end{pmatrix} + \begin{pmatrix} 4 && 10 \\ 5
 \end{caixaExemplo}
 
 \begin{caixaExemplo}
-
-\lipsum[1]
+Exemplos
 
 $$\begin{pmatrix} 2 && 1 \\ -3 && 5 \end{pmatrix} + \begin{pmatrix} 4 && 10 \\ 5 && -1 \end{pmatrix} + \begin{pmatrix} 4 && 10 \\ 5 && -1 \end{pmatrix} + \begin{pmatrix} 4 && 10 \\ 5 && -1 \end{pmatrix} = \begin{pmatrix} 6 && 11 \\ 2 && 4  \end{pmatrix}$$
 
