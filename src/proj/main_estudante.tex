@@ -151,13 +151,35 @@
 
 }
 
+%aqui
 
-\titleformat{name=\chapter}[hang]{}{}{0em}{
-	{\color{titlecolor}\BioRhymeExpandedChapter\hspace{-2.5\gridM}\thechapter\linebreak}
-	\linebreak\ArchivoMediumTitle
-} %2 módulos
-\newcommand{\hsp}{\hspace{20pt}}
-\usepackage{blindtext}
+\newcommand{\caixatitulao}[1]{%
+\vspace{-9\gridL}
+\begin{tcolorbox}[%
+	grow to left by=2\gridM,
+	left=0pt,
+	grow to right by=2\gridM,
+	right=0pt,
+	boxrule=0pt,
+	arc=0pt,
+	colframe=boxbg,
+	colback=white,
+	text height=12\gridL,
+	breakable
+]
+
+{\color{titlecolor}\BioRhymeExpandedChapter\hspace{-0.5\gridM}\thechapter}
+	\vspace{-6\gridL}
+	\begin{flushleft}
+		\par\leftskip=2\gridM \ArchivoMediumTitle #1
+	\end{flushleft}
+\end{tcolorbox}
+}
+
+\titleformat{name=\chapter}[display]{}{}{0em}{\caixatitulao}[\vspace{-6\gridL}]
+
+%\newcommand{\hsp}{\hspace{20pt}}
+%\usepackage{blindtext}
 %\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{titlecolor}{|}\hsp}{0pt}{\Huge\bfseries}
 
 %
@@ -190,22 +212,6 @@
 \chapter{Introdução}
 
 Este material foi desenvolvido especificamente para os estudantes que foram aprovados em algum curso de Exatas tendo obtido nota em Matemática no vestibular ou no ENEM abaixo do ideal.
-
-{
-{
-	\color{titlecolor}
-	\BioRhymeExpandedChapter
-	\baselineskip-80pt
-	\lineskiplimit-1000pt
-	
-	L
-}	
-	\ArchivoMediumTitle
-	\setlength{\parskip}{0}
-	\vspace{-40pt}
-	\par orem ipsum sit dolor amet
-
-}
 
 A experiência mostra que esses estudantes provavelmente terão dificuldades nas duas disciplinas de Matemática que são obrigatórias em praticamente todos os cursos de Exatas: Cálculo Diferencial e Integral I e Geometria Analítica. Com isso em mente, a Unicamp criou a iniciativa Tutoria em Matemática. Essa iniciativa visa oferecer suporte especificamente concebido para esses estudantes de modo a facilitar a transição entre o Ensino Médio e o Ensino Superior.
 
