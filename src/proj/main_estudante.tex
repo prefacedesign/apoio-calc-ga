@@ -42,7 +42,7 @@
 %novos ambientes que eu criei
 %--------------------------------------
 \newtheorem*{teorema}{Teorema}
-\newtheorem{questao}{Questão}[chapter]
+\newtheorem{questao}{Q}[chapter]
 \newtheorem{diagnostico}{Questão}
 \newtheorem*{reflita}{Reflita}
 \newtheorem*{resolvida}{Questão resolvida}
@@ -109,12 +109,12 @@
 
 %Fazendo as caixinhas de exemplo
 \newlength{\identacao}
-\setlength{\identacao}{2\gridM-5pt}%
+\setlength{\identacao}{1\gridM-5pt}%
 
 \newenvironment{caixaExemplo}{\begin{tcolorbox}[%
-	grow to left by=2\gridM,
+	grow to left by=1\gridM,
 	left=2pt,
-	grow to right by=2\gridM,
+	grow to right by=1\gridM,
 	right=2pt,
 	boxrule=0pt,
 	arc=0pt,
@@ -133,15 +133,15 @@
 \font\sixly=lasyb10
 \def\divisoriapadrao{\divisoria{\hspace{14\gridM}}}
 
-\titleformat{name=\section}{\ArchivoBlackFourteen}{}{0em}{
-{\hspace{-1pt}\divisoriapadrao \vspace{10pt}}\linebreak
-\raggedright
-\leftskip=-\identacao
-\rightskip=-\identacao
-\parindent=0pt
-\hangindent=0pt
-\color{titlecolor}\MakeUppercase
-} %2 módulos
+%\titleformat{name=\section}{\ArchivoBlackFourteen}{}{0em}{
+%{\hspace{-1pt}\divisoriapadrao \vspace{10pt}}\linebreak
+%\raggedright
+%\leftskip=-\identacao
+%\rightskip=-\identacao
+%\parindent=0pt
+%\hangindent=0pt
+%\color{titlecolor}\MakeUppercase
+%} %2 módulos
 
 
 {
@@ -149,6 +149,28 @@
 \baselineskip15pt
 \lineskiplimit-20pt
 
+}
+
+\newcommand{\tituloComOndulado}[1]{%
+\begin{tcolorbox}[%
+	grow to left by=2\gridM,
+	left=0pt,
+	grow to right by=2\gridM,
+	right=0pt,
+	boxrule=0pt,
+	arc=0pt,
+	colframe=boxbg,
+	colback=white
+]
+	\ArchivoBlackFourteen
+	{\hspace{-1pt}\divisoriapadrao \vspace{10pt}}\linebreak
+
+	\vspace{-10pt}
+	\parindent=0pt
+	\hangindent=0pt
+	\raggedright
+	\color{titlecolor}\MakeUppercase{#1}
+\end{tcolorbox}
 }
 
 %aqui
@@ -177,6 +199,7 @@
 }
 
 \titleformat{name=\chapter}[display]{}{}{0em}{\caixatitulao}[\vspace{-6\gridL}]
+\titleformat{name=\section}[display]{}{}{0em}{\tituloComOndulado}[\vspace{-3\gridL}]
 
 %\newcommand{\hsp}{\hspace{20pt}}
 %\usepackage{blindtext}
@@ -216,6 +239,8 @@ Este material foi desenvolvido especificamente para os estudantes que foram apro
 A experiência mostra que esses estudantes provavelmente terão dificuldades nas duas disciplinas de Matemática que são obrigatórias em praticamente todos os cursos de Exatas: Cálculo Diferencial e Integral I e Geometria Analítica. Com isso em mente, a Unicamp criou a iniciativa Tutoria em Matemática. Essa iniciativa visa oferecer suporte especificamente concebido para esses estudantes de modo a facilitar a transição entre o Ensino Médio e o Ensino Superior.
 
 Temos três grandes objetivos com esse projeto. Primeiro, reforçar alguns tópicos matemáticos importantes do Ensino Médio. Segundo, reforçar a conexão entre o que você aprendeu nos últimos anos com o que será ensinado nessas disciplinas. Terceiro, criar um espaço para que o estudante estude ativamente com suporte de um tutor.
+
+\tituloComOndulado{Isto é um teste}
 
 A tutoria consiste em 3 horas de atividades semanais (cheque no seu horário como elas estão distribuídas), sempre em pequenos grupos acompanhados por um tutor. Todos os encontros seguirão atividades propostas em cadernos especialmente desenvolvidos de acordo com o objetivo da iniciativa e acompanhando de perto o conteúdo das disciplinas principais.
 
