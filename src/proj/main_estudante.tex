@@ -213,7 +213,7 @@
 
 \titleformat{name=\subsection}{\ArchivoBlackTen}{\thesection}{0em}{} %2 módulos ====>>> Muito estranho se desloca prá baixo ele ferra com a divisória
 
-\def\divisoria{\bgroup \markoverwith{\lower3.5\p@\hbox{\sixly \color{titlecolor} \char58}}\ULon}
+\def\divisoria{\bgroup \markoverwith{\lower3.5\p@\hbox{\sixly \textcolor{titlecolor}{\char58}}}\ULon}
 \font\sixly=lasyb10
 \def\divisoriapadrao{\divisoria{\hspace{14\gridM}}}
 
@@ -236,6 +236,7 @@
 }
 
 \newcommand{\tituloComOndulado}[1]{%
+\pagebreak[3]
 \begin{tcolorbox}[%
 	grow to left by=2\gridM,
 	left=0pt,
@@ -253,8 +254,9 @@
 	\parindent=0pt
 	\hangindent=0pt
 	\raggedright
-	\color{titlecolor}\MakeUppercase{#1}
+	\textcolor{titlecolor}{\MakeUppercase{#1}}
 \end{tcolorbox}
+\nopagebreak[4]
 }
 
 %aqui
@@ -287,7 +289,10 @@
 
 \setlist[enumerate]{leftmargin=0pt, labelsep=0.5\gridM}
 \setlist[itemize]{leftmargin=0pt, labelsep=0.5\gridM}
+%texto alinhado a esquerda
 \raggedright
+%evita de ele preencher os espaços verticais
+\raggedbottom
 
 %\newcommand{\hsp}{\hspace{20pt}}
 %\usepackage{blindtext}
