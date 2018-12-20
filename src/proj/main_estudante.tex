@@ -15,6 +15,7 @@
 \usepackage[strict]{changepage} %permite mudar as margens no meio do documento
 \usepackage{lipsum}
 \usepackage{calc}
+\usepackage{tabto}
  
 %Portuguese-specific commands
 %--------------------------------------
@@ -29,33 +30,14 @@
 \graphicspath{{img/}} %pasta das imagens
 \usepackage{fancyhdr} %para formatar o rodape
 
-%Rodape
-%---------------------------------------
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot[CE,CO]{\textit{material em versão beta}}
-\fancyfoot[LE,RO]{\thepage} 
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-%---------------------------------------
- 
-%novos ambientes que eu criei
-%--------------------------------------
-\newtheorem*{teorema}{Teorema}
-\newtheorem{questao}{Q}[chapter]
-\newtheorem{diagnostico}{Questão}
-\newtheorem*{reflita}{Reflita}
-\newtheorem*{resolvida}{Questão resolvida}
-\newtheorem*{resolva}{Questão do livro-texto}
-
-\DeclareTextFontCommand\sugestao{\textsc}
-%--------------------------------------
-
-%elementos visuais
-%--------------------------------------
-
 \newdimen\gridM\gridM=24.70pt
 \newdimen\gridL\gridL=13.228pt
+% um módulo = 24.70pt
+% uma linha = 13.228pt
+
+
+
+
 
 \setmainfont{Spectral}
 \linespread{1.10} %vira uma line height de 13.228pt
@@ -63,6 +45,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1\gridL}
 \definecolor{titlecolor}{cmyk}{0,0.44,1,0}
+\definecolor{questaocolor}{cmyk}{0,0.44,1,0}
 \definecolor{boxbg}{cmyk}{0,0.04,0.1,0}
 
 \setsansfont{Archivo}[
@@ -76,8 +59,76 @@
 \newfontfamily\ArchivoBlackTen[SizeFeatures={Size=10}]{Archivo Black}
 \newfontfamily\ArchivoMediumTitle[SizeFeatures={Size=36}]{Archivo}
 \newfontfamily\BioRhymeExpandedChapter[SizeFeatures={Size=170}]{BioRhyme Expanded}
+\newfontfamily\BioRhymeExpandedQuestao[SizeFeatures={Size=10}]{BioRhyme Expanded}
 \usepackage[euler-digits,euler-hat-accent]{eulervm}
 \usepackage[normalem]{ulem}
+
+\TabPositions
+	{%
+	 0.5\gridM ,
+	 1.0\gridM ,
+	 1.5\gridM ,
+	 2.0\gridM ,
+	 2.5\gridM ,
+	 3.0\gridM ,
+	 3.5\gridM ,
+	 4.0\gridM ,
+	 4.5\gridM ,
+	 5.0\gridM ,
+ 	 5.5\gridM ,
+	 6.0\gridM ,
+ 	 6.5\gridM ,
+	 7.0\gridM ,
+ 	 7.5\gridM ,
+	 8.0\gridM ,
+	 8.5\gridM ,
+	 9.0\gridM ,
+ 	 9.5\gridM ,
+	 10.0\gridM ,
+ 	 10.5\gridM ,
+	 11.0\gridM ,
+ 	 11.5\gridM ,
+ 	 12.0\gridM ,
+ 	 12.5\gridM ,
+ 	 13.0\gridM ,
+ 	 13.5\gridM ,
+ 	 14.0\gridM ,
+ 	 14.5\gridM ,
+ 	 15.0\gridM ,
+ 	 15.5\gridM ,
+ 	 16.0\gridM ,
+ 	 16.5\gridM
+	 }
+
+%novos ambientes que eu criei
+%--------------------------------------
+\newtheorem*{teorema}{Teorema}
+\newtheoremstyle{estiloQuestao}
+	{\gridL}
+	{0pt}
+	{\setlist[enumerate]{font=\bfseries, leftmargin=0pt, labelsep=1.0\gridM}}
+	{-2\gridM}
+	{\BioRhymeExpandedQuestao\color{questaocolor}}
+	{\hspace{-5pt}}
+	{}
+	{\hbox to 2\gridM{\thmname{#1}\thmnumber{#2}} \thmnote{#3}}
+\theoremstyle{estiloQuestao}
+\newtheorem{questao}{Q}[]
+\theoremstyle{plain}
+\newtheorem{diagnostico}{Questão}
+\newtheorem*{reflita}{Reflita}
+\newtheorem*{resolvida}{Questão resolvida}
+\newtheorem*{resolva}{Questão do livro-texto}
+
+\DeclareTextFontCommand\sugestao{\textsc}
+%--------------------------------------
+
+%elementos visuais
+%--------------------------------------
+
+
+
+
 
 
 
@@ -88,9 +139,6 @@
 
 
 
-% um módulo = 24.70pt
-% uma linha = 13.228pt
-
 \usepackage{geometry} %margens
  
  \geometry{
@@ -98,7 +146,7 @@
  inner=3.5\gridM,
  outer=3.5\gridM,
  top=3\gridL,
- bottom=4\gridL,
+ bottom=6\gridL,
  }
 
 
@@ -201,6 +249,9 @@
 \titleformat{name=\chapter}[display]{}{}{0em}{\caixatitulao}[\vspace{-6\gridL}]
 \titleformat{name=\section}[display]{}{}{0em}{\tituloComOndulado}[\vspace{-3\gridL}]
 
+\setlist[enumerate]{leftmargin=0pt, labelsep=0.5\gridM}
+\setlist[itemize]{leftmargin=0pt, labelsep=0.5\gridM}
+
 %\newcommand{\hsp}{\hspace{20pt}}
 %\usepackage{blindtext}
 %\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{titlecolor}{|}\hsp}{0pt}{\Huge\bfseries}
@@ -220,7 +271,10 @@
 %] 
 %--------------------------------------
 
-\title{Material do estudante - Tutoria MA111 e MA141}
+
+\newcommand{\titulo}{Material do estudante - Tutoria MA111 e MA141}
+
+\title{\titulo}
 \author{Leonardo Barichello}
 \date{\today}
 
@@ -231,6 +285,31 @@
 
 
 \maketitle
+%Rodape - PARA FUNCIONAR CORRETAMENTE TEM QUE SER COLOCADO DEPOIS DO MAKETITLE
+%---------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+%\fancyfoot[CE,CO]{\hbox to 2\gridM{\thepage\hfill}\hbox to 8\gridM{\leftmark\hfill}}
+%\fancyfoot[LE,LO]{\hbox to 14\gridM{\hspace{-2\gridM}\leftmark} \hbox to 14\gridM{\hspace{-2\gridM}\rule[0pt]{14\gridM}{0.5pt}}
+\fancyfoot[LO]{%
+	\vspace{0.5\gridL}
+	\hbox to 16\gridM{\hspace{-2\gridM}\hbox to 14\gridM{\rule[0.5\gridL]{14\gridM}{0.5pt}}}
+	\hbox to 14\gridM{\hspace{-2\gridM}\hbox to 2\gridM{\thepage\hfill}\textsc{\MakeLowercase{\leftmark}}\hfill}
+}
+\fancyfoot[LE]{%
+	\vspace{0.5\gridL}
+	\hbox to 16\gridM{\hspace{-2\gridM}\hbox to 14\gridM{\rule[0.5\gridL]{14\gridM}{0.5pt}}}
+	\hbox to 14\gridM{\hspace{-2\gridM}\hbox to 2\gridM{\thepage\hfill}\textsc{\MakeLowercase{\titulo}}\hfill}
+}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\chaptermark}[1]{%
+\markboth{#1}{}}
+%\renewcommand{\headwidth}{10\gridM}
+
+%\renewcommand{\footrule}{\vbox to 0pt{\hbox to\headwidth{\dotfill}\vss}}
+%---------------------------------------
 
 \chapter{Introdução}
 
@@ -276,8 +355,12 @@ $$\begin{pmatrix} 2 && 1 \\ -3 && 5 \end{pmatrix} + \begin{pmatrix} 4 && 10 \\ 5
 \textbf{Vá com calma}. A quantidade de atividades propostas foi pensada para que haja tempo para resolver todas as questões durante os encontros. Portanto, não corra. Leia atentamente as questões e os textos explicativos antes e depois delas. Uma grande parte da aprendizagem esperada vem dessas explicações. Caso você não termine algum capítulo, não se preocupe. É mais importante que você compreenda cada tópico visto do que chegue ao final apressadamente.
  
 \textbf{Seja ativo}. Ao ler o material, tenha certeza de que você entendeu o conteúdo. Volte e cheque as referências, refaça cálculos se for necessário e faça anotações. Jamais deixe de registrar o processo de resolução de uma questão de modo que você consiga relê-lo no futuro se desejar. Recomendamos que você faça anotações tanto no texto quanto nas suas resoluções que lhe permitam tanto entender  melhor o que foi feito quanto re-entender caso um dia você o consulte novamente. 
+
+1 \tab 2 \tab 3 \tab 4 \tab 5 \tab 6 \tab 7 \tab 8 \tab 9 \tab 0 \tab 1 \tab 2 \tab 3 \tab 4 \tab 5 \tab 6 \tab 7 \tab 8 \tab 9 \tab 0 \tab 1 \tab 2 \tab 3 \tab 4 \tab 5 \tab 6 \tab 7 \tab 8 \tab 9 \tab 0 \tab 1 \tab 2 \tab 3 \tab 4 \tab 5 \tab 6 \tab 7 \tab 8 \tab 9 \tab 0 \tab 1 \tab 2 \tab 3 \tab 4 \tab 5 \tab 6 \tab 7 \tab 8 \tab 9 \tab 0 \tab 1 \tab 2 \tab 3 \tab 4 \tab 5 \tab 6 \tab 7 \tab 8 \tab 9 \tab 0 \tab 
  
 \textbf{Pergunte}. Peça ajuda aos colegas e ao seu tutor caso não tenha conseguido entender alguma coisa. Não se sinta inibido, pois outros colegas podem ter as mesmas dúvidas que você ou serem capazes de ter explicar algo a partir de um ponto muito parecido com o que você está agora. Mas, ao invés de respostas prontas, procure sugestões ou esclarecimentos que lhe permitam resolver as questões e entender os conceitos de maneira independente.
+
+
 
 \textbf{Mantenha o engajamento.} Se você não conseguir terminar algum capítulo, não se preocupe. Este material foi concebido pensando nessa possibilidade: todo trabalho feito aqui deve te ajudar nas disciplinas principais cedo ou tarde. Por outro lado, se em algum momento o conteúdo parecer inútil ou muito fácil, mantenha o engajamento pois os tópicos foram cuidadosamente escolhidos e vocẽ notará o efeito do material em breve.
 
