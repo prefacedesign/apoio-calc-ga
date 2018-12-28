@@ -13,6 +13,44 @@
 \def\kParaTutores{2}
 \def\kParaFolhaAvaliacoes{3}
 
+
+\documentclass[10pt,openany,twoside=semi]{book}
+
+%encoding
+%--------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage{gensymb} %simbolo de grau
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage{etoolbox}
+%--------------------------------------
+
+%formatting
+\usepackage{xltxtra} %coisas do xelatex incluindo a possibilidade de usar fontes OpenType para o texto.
+\usepackage[strict]{changepage} %permite mudar as margens no meio do documento
+\usepackage{lipsum}
+\usepackage{calc}
+\usepackage{tabto}
+\usepackage{background} %para fazer a linha vertical
+ 
+%Portuguese-specific commands
+%--------------------------------------
+\usepackage[portuguese]{babel}
+%--------------------------------------
+
+\usepackage[shortlabels]{enumitem}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{subfiles} %suporte a multiplos arquivos
+\graphicspath{{img/}} %pasta das imagens
+\usepackage{fancyhdr} %para formatar o rodape
+
+\generalcomment{destinacao}{}{}
+
 \newcommand{\paraTutores}{%
 	\ifnum\destinacaoConteudo=\kParaTutores
 		\def\eraPraTutores{1}
@@ -50,40 +88,6 @@
 		\leftskip=0pt
 	\fi
 }
-
-\documentclass[10pt,openany]{book}
-
-%encoding
-%--------------------------------------
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{amsthm}
-\usepackage{xcolor}
-\usepackage{gensymb} %simbolo de grau
-\usepackage{amssymb}
-\usepackage{comment}
-%--------------------------------------
-
-%formatting
-\usepackage{xltxtra} %coisas do xelatex incluindo a possibilidade de usar fontes OpenType para o texto.
-\usepackage[strict]{changepage} %permite mudar as margens no meio do documento
-\usepackage{lipsum}
-\usepackage{calc}
-\usepackage{tabto}
-\usepackage{background} %para fazer a linha vertical
- 
-%Portuguese-specific commands
-%--------------------------------------
-\usepackage[portuguese]{babel}
-%--------------------------------------
-
-\usepackage[shortlabels]{enumitem}
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{amsmath}
-\usepackage{subfiles} %suporte a multiplos arquivos
-\graphicspath{{img/}} %pasta das imagens
-\usepackage{fancyhdr} %para formatar o rodape
 
 \newdimen\gridM\gridM=24.70pt
 \newdimen\gridL\gridL=13.228pt
@@ -223,14 +227,14 @@
  asymmetric
  }
  
- \reversemarginpar
+ \normalmarginpar
  
  \newcommand{\notaTutor}[1]{
- 	\marginnote{
+ 	\hspace{0pt}\marginpar{
+ 		\scriptsize
+ 		\linespread{1.654} 
  		\ArchivoMediumEight
- 		\linebreak #1
- 	}
- }
+ 		#1}}
  
 \fi
 
@@ -469,6 +473,7 @@ Temos três grandes objetivos com esse projeto. Primeiro, reforçar alguns tópi
 
 A tutoria consiste em 3 horas de atividades semanais (cheque no seu horário como elas estão distribuídas), sempre em pequenos grupos acompanhados por um tutor. Todos os encontros seguirão atividades propostas em cadernos especialmente desenvolvidos de acordo com o objetivo da iniciativa e acompanhando de perto o conteúdo das disciplinas principais.
 
+
 %\end{comment}
 \paraTutores
 
@@ -478,7 +483,7 @@ A tutoria consiste em 3 horas de atividades semanais (cheque no seu horário com
 
 A tutoria consiste em 3 horas de atividades semanais (cheque no seu horário como elas estão distribuídas), sempre em pequenos grupos acompanhados por um tutor. Todos os encontros seguirão atividades propostas em cadernos especialmente desenvolvidos de acordo com o objetivo da iniciativa e acompanhando de perto o conteúdo das disciplinas principais.
 
-\subsection{Esta é uma subseção}
+ \subsection{Esta é uma subseção}
 
 A tutoria consiste em 3 horas de atividades semanais (cheque no seu horário como elas estão distribuídas), sempre em pequenos grupos acompanhados por um tutor. Todos os encontros seguirão atividades propostas em cadernos especialmente desenvolvidos de acordo com o objetivo da iniciativa e acompanhando de perto o conteúdo das disciplinas principais.
 
@@ -519,31 +524,14 @@ $$\begin{pmatrix} 2 && 1 \\ -3 && 5 \end{pmatrix} + \begin{pmatrix} 4 && 10 \\ 5
 %\end{comment}
 \paraAmbos
  
-\notaTutor{Mas, ao invés de respostas prontas, procure sugestões ou esclarecimentos que lhe permitam resolver as questões e entender os conceitos de maneira independente.} \textbf{Seja ativo}. Ao ler o material, tenha certeza de que você entendeu o conteúdo. Volte e cheque as referências, refaça cálculos se for necessário e faça anotações. Jamais deixe de registrar o processo de resolução de uma questão de modo que você consiga relê-lo no futuro se desejar. Recomendamos que você faça anotações tanto no texto quanto nas suas resoluções que lhe permitam tanto entender  melhor o que foi feito quanto re-entender caso um dia você o consulte novamente. 
-
-\def\mostrarIsso{0}
-\ifnum\mostrarIsso=0
-%
-\fi
+\notaTutor{Mas, ao invés de respostas prontas, procure sugestões ou esclarecimentos que lhe permitam resolver as questões e entender os conceitos de maneira independente.} \textbf{Seja ativo}. Ao ler o material, tenha certeza de que você entendeu o conteúdo. Volte e cheque as referências, refaça cálculos se for necessário e faça anotações. Jamais deixe de registrar o processo de resolução de uma questão de modo que você consiga relê-lo no futuro se desejar. Recomendamos que você faça anotações tanto no texto quanto nas suas resoluções que lhe permitam tanto entender  melhor o que foi feito quanto re-entender caso um dia você o consulte novamente.
 
 
 \textbf{Pergunte}. Peça ajuda aos colegas e ao seu tutor caso não tenha conseguido entender alguma coisa. Não se sinta inibido, pois outros colegas podem ter as mesmas dúvidas que você ou serem capazes de ter explicar algo a partir de um ponto muito parecido com o que você está agora. Mas, ao invés de respostas prontas, procure sugestões ou esclarecimentos que lhe permitam resolver as questões e entender os conceitos de maneira independente.
 
-\ifnum\mostrarIsso=0
-%
-\fi
-
-
-\newcommand{\testeString}{Abacates}
-\ifnum\strcmp{\testeString}{Abacaxi}=0
-%
-\fi
-
-\textbf{Mantenha o engajamento.} Se você não conseguir terminar algum capítulo, não se preocupe. Este material foi concebido pensando nessa possibilidade: todo trabalho feito aqui deve te ajudar nas disciplinas principais cedo ou tarde. Por outro lado, se em algum momento o conteúdo parecer inútil ou muito fácil, mantenha o engajamento pois os tópicos foram cuidadosamente escolhidos e vocẽ notará o efeito do material em breve.
-
-\ifnum\strcmp{\testeString}{Abacaxi}=0
-%
-\fi
+\notaTutor{Mas, ao invés de respostas prontas, 
+$$ 1 = x^2 $$
+procure sugestões ou esclarecimentos que lhe permitam resolver as questões e entender os conceitos de maneira independente.}\textbf{Mantenha o engajamento.} Se você não conseguir terminar algum capítulo, não se preocupe. Este material foi concebido pensando nessa possibilidade: todo trabalho feito aqui deve te ajudar nas disciplinas principais cedo ou tarde. Por outro lado, se em algum momento o conteúdo parecer inútil ou muito fácil, mantenha o engajamento pois os tópicos foram cuidadosamente escolhidos e vocẽ notará o efeito do material em breve.
 
 \textbf{Registre o seu progresso}. Não deixe de registrar o seu progresso ao final de cada capítulo. Isso é importante para podermos avaliar o quão bem a iniciativa está funcionando e para que você não deixe de completar as atividades propostas.
 
