@@ -13,7 +13,6 @@
 \def\kParaTutores{2}
 \def\kParaFolhaAvaliacoes{3}
 
-
 \documentclass[10pt,openany,twoside=semi]{book}
 
 %encoding
@@ -26,6 +25,7 @@
 \usepackage{amssymb}
 \usepackage{comment}
 \usepackage{etoolbox}
+\usepackage{intcalc}
 %--------------------------------------
 
 %formatting
@@ -35,6 +35,8 @@
 \usepackage{calc}
 \usepackage{tabto}
 \usepackage{background} %para fazer a linha vertical
+\usepackage{needspace}
+\usepackage{emptypage}
  
 %Portuguese-specific commands
 %--------------------------------------
@@ -51,19 +53,13 @@
 
 \generalcomment{destinacao}{}{}
 
-\newcommand{\paraTutores}{%
-	\ifnum\destinacaoConteudo=\kParaTutores
-		\def\eraPraTutores{1}
-	\else
-		\def\eraPraTutores{0}
-	\fi
-	
+\newcommand{\paraTutores}{%	
 	\def\destinacaoConteudo{\kParaTutores}	
 
 	\ifnum\strcmp{\versaoApostila}{tutor}=0
 		\color{black}
 		\ArchivoMediumNine
-		\leftskip=-1.80\gridM
+		\leftskip=-2.0\gridM
 	\fi
 	
 	\ifnum\strcmp{\versaoApostila}{aluno}=0
@@ -80,12 +76,38 @@
 	\def\destinacaoConteudo{\kParaAlunos}
 }
 
+\newcommand{\paraFolhaAvaliacoes}{%
+	\def\destinacaoConteudo{\kParaFolhaAvaliacoes}
+	\begin{comment}
+}
+
 \newcommand{\paraAmbos}{%
 	\def\destinacaoConteudo{\kParaAmbos}
 	\ifnum\strcmp{\versaoApostila}{tutor}=0
 		\color{black}
 		\setmainfont{Spectral}
 		\leftskip=0pt
+	\fi
+}
+
+\newcounter{testpage}
+
+\newcommand{\clearquadruplepage}{	
+   	\setcounter{testpage}{\intcalcMod{\thepage}{4}}   	
+   	\ifnum\thetestpage=0
+	   	\newpage
+	\else
+		\ifnum\thetestpage=1
+			\newpage \thispagestyle{empty} \hbox{} \newpage \thispagestyle{empty} \hbox{} \newpage \thispagestyle{empty} \hbox{} \newpage
+		\else
+			\ifnum\thetestpage=2
+				\newpage \thispagestyle{empty} \hbox{} \newpage \thispagestyle{empty} \hbox{} \newpage
+			\else
+				\ifnum\thetestpage=3
+					\newpage \thispagestyle{empty} \hbox{} \newpage
+				\fi
+			\fi
+		\fi	
 	\fi
 }
 
@@ -163,7 +185,6 @@
 
 %novos ambientes que eu criei
 %--------------------------------------
-\newtheorem*{teorema}{Teorema}
 \newtheoremstyle{estiloQuestao}
 	{\gridL}
 	{0pt}
@@ -171,15 +192,43 @@
 	{-2\gridM}
 	{\BioRhymeExpandedQuestao\color{questaocolor}}
 	{\hspace{-5pt}}
-	{}
+	{0pt}
 	{\hbox to 2\gridM{\thmname{#1}\thmnumber{#2}} \thmnote{#3}}
 \theoremstyle{estiloQuestao}
-\newtheorem{questao}{Q}[]
+\newtheorem{questao}{Q}[chapter]
+\renewcommand*{\thequestao}{\arabic{questao}}
+
+\theoremstyle{estiloQuestao}
+\newtheorem{gabaritoQuestao}{Q}[chapter]
+\renewcommand*{\thegabaritoQuestao}{\arabic{gabaritoQuestao}}
+
+\theoremstyle{estiloQuestao}
+\newtheorem{diagnostico}{D}[chapter]
+\renewcommand*{\thediagnostico}{\arabic{diagnostico}}
+
 \theoremstyle{plain}
-\newtheorem{diagnostico}{Questão}
+
+\newtheoremstyle{estiloSetinha}
+	{\gridL}
+	{0pt}
+	{\itshape \setlist[enumerate]{font=\bfseries, leftmargin=0pt, labelsep=1.0\gridM}}
+	{-2\gridM}
+	{}
+	{\hspace{0pt}}
+	{0pt}
+	{\textsc{\thmname{\MakeLowercase{#1}}\enspace→\enspace\thmnote{#3}}}
+
+\theoremstyle{estiloSetinha}
 \newtheorem*{reflita}{Reflita}
+
+\theoremstyle{estiloSetinha}
 \newtheorem*{resolvida}{Questão resolvida}
+
+\theoremstyle{estiloSetinha}
 \newtheorem*{resolva}{Questão do livro-texto}
+
+\theoremstyle{estiloSetinha}
+\newtheorem*{teorema}{Teorema}
 
 \DeclareTextFontCommand\sugestao{\textsc}
 %--------------------------------------
@@ -260,16 +309,23 @@
 ]
 \itshape
 \leftskip=\identacao
-\rightskip=\identacao}{\end{tcolorbox}}
+\rightskip=\identacao
+%
+\setlist[itemize]  {leftmargin=1.8\gridM, labelsep=0.5\gridM, itemsep=1\gridL, topsep=1\gridL}
+\setlist[enumerate]{leftmargin=1.8\gridM, labelsep=0.5\gridM, itemsep=1\gridL, topsep=1\gridL}
+%
+}{\end{tcolorbox}}
 
 
 \newcommand{\tituloSubsection}[1]{%
+   \needspace{4\gridL}
+
    \ifnum\destinacaoConteudo=\kParaTutores{
-   	\leftskip=-1.9\gridM \parskip=0
-   	\ArchivoBlackTen #1
+   	\leftskip=-2.0\gridM \parskip=0pt
+   	\ArchivoBlackTen #1 \vspace{-3\gridL}
    	
 }
-   \else { \ArchivoBlackTen #1 }
+   \else { \ArchivoBlackTen #1 \vspace{-3\gridL}}
    \fi
    
 }
@@ -280,17 +336,6 @@
 \font\sixly=lasyb10
 \def\divisoriapadrao{\divisoria{\hspace{14\gridM}}}
 
-%\titleformat{name=\section}{\ArchivoBlackFourteen}{}{0em}{
-%{\hspace{-1pt}\divisoriapadrao \vspace{10pt}}\linebreak
-%\raggedright
-%\leftskip=-\identacao
-%\rightskip=-\identacao
-%\parindent=0pt
-%\hangindent=0pt
-%\color{titlecolor}\MakeUppercase
-%} %2 módulos
-
-
 {
 
 \baselineskip15pt
@@ -299,11 +344,11 @@
 }
 
 \newcommand{\tituloComOndulado}[1]{%
-\pagebreak[3]
+\needspace{4\gridL}
 \ifnum\destinacaoConteudo=\kParaTutores
 {%
-   \leftskip=-1.80\gridM 
-   \ArchivoBlackTen \MakeUppercase{#1}
+   \leftskip=-2.0\gridM 
+   \ArchivoBlackTen \MakeUppercase{#1} 
    
 }
 \else
@@ -324,10 +369,9 @@
 	\parindent=0pt
 	\hangindent=0pt
 	\raggedright
-	\textcolor{titlecolor}{\MakeUppercase{#1}}
+	\textcolor{titlecolor}{\hspace{-4pt}\MakeUppercase{#1}}
   \end{tcolorbox}
 \fi
-\nopagebreak[4]
 }
 
 %aqui
@@ -360,28 +404,29 @@
 
 \setlist[enumerate]{leftmargin=0pt, labelsep=0.5\gridM}
 \setlist[itemize]{leftmargin=0pt, labelsep=0.5\gridM}
+\renewcommand\labelitemi{→}
+
 %texto alinhado a esquerda
 \raggedright
 %evita de ele preencher os espaços verticais
 \raggedbottom
 
-%\newcommand{\hsp}{\hspace{20pt}}
-%\usepackage{blindtext}
-%\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{titlecolor}{|}\hsp}{0pt}{\Huge\bfseries}
 
-%
+\newbox\gabaritoAcumulado
+\setbox\gabaritoAcumulado=\vbox{}
 
+\newenvironment{gabarito}
+{%
+  \global\setbox\gabaritoAcumulado=\vbox\bgroup
+  \unvbox\gabaritoAcumulado
+}%
+{%
+  \bigbreak
+  \egroup
+}
 
-%\titleformat{\subsection}[display]{\bfseries}{}{}
-%{ % before-code
-%    \rule{\textwidth}{1pt}
-%    \vspace{1ex}
-%    \centering
-%} 
-%[ % after-code
-%\vspace{-1ex}%
-%\rule{\textwidth}{0.2pt}
-%] 
+\newcommand{\imprimeGabarito}{\par\unvbox\gabaritoAcumulado}
+
 %--------------------------------------
 
 
@@ -483,7 +528,7 @@ A tutoria consiste em 3 horas de atividades semanais (cheque no seu horário com
 
 A tutoria consiste em 3 horas de atividades semanais (cheque no seu horário como elas estão distribuídas), sempre em pequenos grupos acompanhados por um tutor. Todos os encontros seguirão atividades propostas em cadernos especialmente desenvolvidos de acordo com o objetivo da iniciativa e acompanhando de perto o conteúdo das disciplinas principais.
 
- \subsection{Esta é uma subseção}
+\subsection{Esta é uma subseção}
 
 A tutoria consiste em 3 horas de atividades semanais (cheque no seu horário como elas estão distribuídas), sempre em pequenos grupos acompanhados por um tutor. Todos os encontros seguirão atividades propostas em cadernos especialmente desenvolvidos de acordo com o objetivo da iniciativa e acompanhando de perto o conteúdo das disciplinas principais.
 
@@ -593,9 +638,15 @@ Existem também diversos portais com vídeos abordando tópicos de matemática n
 
 Aqui virá o texto da Adriane sobre a transição para o Ensino Superior.
 
-\newpage
+\ifnum\strcmp{\versaoApostila}{aluno}=0
+	\clearquadruplepage
+\fi
 
 \subfile{cap1_estudante.tex} %Matrizes 2x2
+
+\ifnum\strcmp{\versaoApostila}{aluno}=0
+	\clearquadruplepage
+\fi
 
 \subfile{cap2_estudante.tex} %Potenciais, exp e log
 

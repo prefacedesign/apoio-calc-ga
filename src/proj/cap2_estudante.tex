@@ -24,6 +24,8 @@ Os pré-requisitos para este capítulo são:
 
 Esses tópicos não serão cobertos durante as atividades de tutoria. Se você acha que não sabe o suficiente sobre algum deles, sugerimos que se procure material de apoio antes de começar a resolver as questões desse capítulo.
 
+%\end{comment}
+\paraFolhaAvaliacoes
 Antes de começar, indique o quanto você acha que sabe sobre os seguintes itens:
 
 \begin{center}
@@ -40,7 +42,8 @@ Antes de começar, indique o quanto você acha que sabe sobre os seguintes itens
 \end{tabular}
 \end{center}
 
-\newpage
+%\end{comment}
+\paraAmbos
 
 \section{Questões diagnósticas}
 
@@ -53,9 +56,6 @@ Escreva as expressões abaixo como uma única potência.
 \end{enumerate}
 \end{diagnostico}
  
-\vspace{20 mm}
-\hrulefill
-  
 \begin{diagnostico}
 Resolva as equações dadas abaixo.
 \begin{enumerate}[a)]
@@ -75,15 +75,16 @@ Lembre-se de checar com seu tutor em qual questão você deve começar.
 
 A interpretação de $a^n$ como sendo o produto do número $a$ por ele mesmo $n$ vezes é um pouco limitada, pois só funciona para valores inteiros positivos de $n$, mas nos permite obter e interpretar as propriedades mais básicas da potenciação. Se você não está familiarizado com as propriedades listadas abaixo, sugerimos que leia a seção 1.8 do livro \sugestao{Matemática Básica, volume 1} até a página 70 e então volte para esta questão.
 
-\begin{shaded*}
+\begin{caixaExemplo}
+Tá ok?
 \begin{itemize}
- \item Produto de potências: $a^n \cdot a^m = a^{n+m}$
+ \item Produto de potências: $a^n \cdot a^m = a^{n+m}$ listadas abaixo, sugerimos que leia a seção 1.8 do livro \sugestao{Matemática Básica, volume 1} até a página 70 e então volte para esta questão.
  \item Divisão de potências: $\frac{a^n}{a^m} = a^{n-m}$
  \item Potência de potência: $(a^n)^m = a^{n \cdot m}$
  \item Elevado a zero: $a^0 = 1$
  \item Potência negativa: $a^{-n} = \frac{1}{a^n}$
 \end{itemize}
-\end{shaded*}
+\end{caixaExemplo}
 
 As propriedades acimas podem ser verificadas rapidamente com exemplos numéricos e demonstradas para o caso de expoentes inteiros positivos. Porém, elas valem para quaisquer expoentes e bases reais, contanto que a base seja positiva.
 
@@ -98,6 +99,12 @@ Utilize as propriedades acima para transformar as expressões abaixo em novas ex
 \end{enumerate}
 \end{questao}
 
+\begin{gabarito}
+	\begin{gabaritoQuestao}
+		a) $2^{13}$, b) $5^6$, c) $3^{18}$, d)$a^{-5}$, e) $2^{11}$
+	\end{gabaritoQuestao}
+\end{gabarito}
+
 \subsection*{Erros comuns}
 
 \begin{questao}
@@ -109,6 +116,12 @@ Todas as resoluções mostradas abaixo contêm algum erro. Indique claramente o 
 \item $(a+b)^2 \longrightarrow a^2+b^2$
 \end{enumerate}
 \end{questao}
+
+\begin{gabarito}
+	\begin{gabaritoQuestao}
+		a) $3^{19}$, b) $2^6 \cdot 3^{10}$, c) $5^{10}$, d)$a^2+2ab+b^2$.
+	\end{gabaritoQuestao}
+\end{gabarito}
 
 \subsection*{Notação científica}
 
@@ -128,6 +141,12 @@ Discuta com seus colegas como simplificar as expressões abaixo envolvendo núme
 \end{enumerate}
 \end{questao}
 
+\begin{gabarito}
+	\begin{gabaritoQuestao}
+		a) $7,2 cdot 10^{7}$, b) $8,4 cdot 10^{16}$, c) $4 cdot 10^{-7}$, d) $2,1 cdot 10^{3}$.
+	\end{gabaritoQuestao}
+\end{gabarito}
+
 \subsection*{Potências fracionárias}
 
 As propridades vistas acima são facilmente compreensíveis se pensarmos em exponentes inteiros positivos, mas expoentes fracionários também têm uma interpretação simples e muito poderosa. Vejamos o que ocorre com um caso simples: o que poderia significar $a^\frac{1}{2}$? 
@@ -145,9 +164,9 @@ x &= \sqrt{a} && \text{portanto: } a^\frac{1}{2} = \sqrt{a} \\
 
 Veja que se admitirmos as propriedades básicas da potenciação no contexto de expoentes fracionários, somos levados à conclusão de que $a^\frac{1}{2} = \sqrt{a}$. Essa propriedade pode ser generalizada para o seguinte:
 
-\begin{shaded*}
+\begin{caixaExemplo}
  Potências fracionárias: $a^\frac{n}{m}  = \sqrt[m]{a^n}$, por exemplo: $3^{\frac{2}{5}}=\sqrt[5]{3^2}$
-\end{shaded*}
+\end{caixaExemplo}
 
 Essa propriedade conecta raízes a potências e será muito útil quando você estiver calculando derivadas e integrais envolvendo raízes.
 
@@ -227,7 +246,7 @@ $$
 
 Ou seja, como a incógnita $x$ estava sendo multiplicada por $10$, dividimos os dois lados da equação por $10$. Nesse sentido, dizemos que a divisão é a operação inversa da multiplicação. No caso da nossa equação original $10^x=50$, a incógnita aparece como expoente do $10$ e o logaritmo é definido justamente como a operação inversa da exponenciação.
 
-\begin{shaded*}
+\begin{caixaExemplo}
 Em termos gerais: $log_a x = b \Leftrightarrow x=a^b$. E eis alguns exemplos:
 
 \begin{itemize}
@@ -237,7 +256,7 @@ Em termos gerais: $log_a x = b \Leftrightarrow x=a^b$. E eis alguns exemplos:
  \item $log_3 (1/3) = -1$, pois $1/3=3^{-1}$
  \item $log_{25} 5 = \frac{1}{2}$, pois $5=25^{\frac{1}{2}}=\sqrt{25}$
 \end{itemize}
-\end{shaded*}
+\end{caixaExemplo}
 
 Se os exemplos anteriores não sao familiares pra você, peça ajuda ao seu tutor ou colega pois o entendimento destes exemplos é fundamental para todas as próximas questões.
 
@@ -273,14 +292,14 @@ Use a calculadora para obter
 
 Você dete ter notado um padrão nas respostas obtidas acima. Esse padrão está relacionado com uma das propriedades dos logaritmos, que podem ser vistas abaixo.
 
-\begin{shaded*}
+\begin{caixaExemplo}
 \begin{enumerate}
  \item $log_a (b \cdot c) = log_a b + log_a c)$, por exemplo $log_{10} 20 = log_{10} 2 \cdot 10 = log_{10} 2 + log_{10} 10$
  \item $log_a (b/c) = log_a b - log_a c)$, por exemplo $log_{10} 5 = log_{10} 10/2 = log_{10} 10 - log_{10} 2$
  \item $log_a b^n = n \cdot log_a b$, por exemplo $log_{10} 64 = log_{10} 2^6 = 6 \cdot log_{10} 2$
  \item $log_c b = \frac{log_a b}{log_a c}$, por exemplo $log_2 3 = \frac{log_{10} 3}{log_{10} 2}$
 \end{enumerate}
-\end{shaded*}
+\end{caixaExemplo}
 
 Caso você não esteja familiarizado com essas propriedades, sugerimos a leitura da seção \sugestao{Propriedades dos logaritmos} do livro \sugestao{Matemática Básica volume 1} (página 478), especialmente a resolução comentada dos problemas.
 
@@ -312,8 +331,6 @@ Considere a função $P(t)=2 \cdot 10^t - 5$
 \end{enumerate}
 \end{questao}
 
-\newpage
-
 \section{Rumo ao livro-texto}
 
 A questão abaixo foi retirada do livro Cálculo, de James Stewart, seção 1.6.
@@ -331,15 +348,15 @@ Essa questão mostra uma aplicação bastante comum da função exponencial. A i
 Para resolver o item a, basta fazer $f(t)=5000$ e resolver a equação resultante, como mostrado abaixo.
 
 \begin{align*}
-f(t) & {} =5000 && \text{usando a expressão de } f(t)\\
-100 \cdot 2^{t/3} & {} = 5000  && \text{dividindo os dois lados por 100}\\
-2^{t/3} & {} = 50 && \text{agora aplicamos log na base 2 aos dois lados da igualdade} \\
-log_2 2^{t/3} & {} = log_2 50 && \text{agora aplicamos algumas propriedades do log} \\
+f(t) & {} =5000 && \text{usando a expressão de} f(t)\\
+100 \cdot 2^{t/3} & {} = 5000  && \parbox{5\gridM}{\raggedright dividindo os dois lados por 100}\\
+2^{t/3} & {} = 50 && \parbox{5\gridM}{\raggedright agora aplicamos log na base 2 aos dois lados da igualdade} \\
+log_2 2^{t/3} & {} = log_2 50 && \parbox{5\gridM}{\raggedright  agora aplicamos algumas propriedades do log} \\
 (t/3) \cdot log_2 2 & {} = log_2 (2 \cdot 5^2)  && \text{como } log_2 2=1\\
  \frac{t}{3} & = log_2 2 + log_2 5^2 \\
- & = 1 + 2 \cdot log_2 5 && \text{com auxílio da calculadora} \\
+ & = 1 + 2 \cdot log_2 5 && \parbox{5\gridM}{\raggedright  com auxílio da calculadora} \\
  & = 1 + 2 \cdot 2,32 \\
- & = 5,64 && \text{multiplicando os dois lados por 3}\\
+ & = 5,64 && \parbox{5\gridM}{\raggedright  multiplicando os dois lados por 3}\\
 t & {} = 3 \cdot 5,64 = 16,92 \\
 \end{align*}
 
@@ -370,17 +387,12 @@ Quando o flash de uma câmera é disparado, a bateria imediatamente começa a ca
 \end{enumerate}
 \end{resolva}
 
-\newpage
 
 \section{Gabarito}
 
 Confira as respostas para as questões e \textbf{não se esqueça de registrar o seu progresso}.
 
-\noindent\textbf{Questão 1:} a) $2^{13}$, b) $5^6$, c) $3^{18}$, d)$a^{-5}$, e) $2^{11}$.
-
-\noindent\textbf{Questão 2:} a) $3^{19}$, b) $2^6 \cdot 3^{10}$, c) $5^{10}$, d)$a^2+2ab+b^2$.
-
-\noindent\textbf{Questão 3:} a) $7,2 cdot 10^{7}$, b) $8,4 cdot 10^{16}$, c) $4 cdot 10^{-7}$, d) $2,1 cdot 10^{3}$.
+\imprimeGabarito 
 
 \noindent\textbf{Questão 4:} a) $(x+1)^{\frac{2}{3}}$, b) $\sqrt[5]{a^3}$, c) $x^{\frac{7}{2}}$, d) $\sqrt[3]{10^5}$, e) $\sqrt[6]{t^5}$.
 
@@ -400,14 +412,12 @@ Confira as respostas para as questões e \textbf{não se esqueça de registrar o
 
 \noindent\textbf{Questão 12:} a) $-3$ e $1995$, b) $t_0=1$, c)$0,3$, d) $1,2$.
 
-\section{Registro de progresso}
-
-Essa parte por enquanto fica com conteúdo vazio até que seja decidido como será feito o controle do progresso.
-
-\newpage
 
 \section{Auto-avaliação final}
 Avalie o quanto você acha que sabe sobre os seguintes itens após ter resolvido as questões deste capítulo.
+
+%\end{comment}
+\paraFolhaAvaliacoes
 
 \begin{center}
  \begin{tabular}{|p{35mm}||p{15mm}|p{15mm}|p{15mm}|p{15mm}|} 
@@ -425,12 +435,7 @@ Avalie o quanto você acha que sabe sobre os seguintes itens após ter resolvido
 
 Cheque como foi o seu progresso comparando essas respostas com as que você deu antes de estudar este capítulo. Caso você não tenha atingido o nível ``Bastante''  em algum dos tópicos acima, liste abaixo qual ação concreta você fará nos próximos dias para atingi-lo:
 
-\vspace{0.3cm}
-
-\noindent\rule{\linewidth}{0.4pt}
-
-\noindent\rule{\linewidth}{0.4pt}
-
-\noindent\rule{\linewidth}{0.4pt}
+%\end{comment}
+\paraAmbos
 
 \end{document}
