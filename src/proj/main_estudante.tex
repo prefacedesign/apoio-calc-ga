@@ -1,7 +1,7 @@
 %possibilidades: aluno / professor / folha de avaliações
 
-%\newcommand{\versaoApostila}{aluno}
-\newcommand{\versaoApostila}{tutor}
+\newcommand{\versaoApostila}{aluno}
+%\newcommand{\versaoApostila}{tutor}
 
 % 0 - ambos
 % 1 - apenas alunos
@@ -57,9 +57,7 @@
 	\def\destinacaoConteudo{\kParaTutores}	
 
 	\ifnum\strcmp{\versaoApostila}{tutor}=0
-		\color{black}
-		\ArchivoMediumNine
-		\leftskip=-2.0\gridM
+		\estiloTutores
 	\fi
 	
 	\ifnum\strcmp{\versaoApostila}{aluno}=0
@@ -69,9 +67,8 @@
 
 \newcommand{\paraAlunos}{%
 	\ifnum\strcmp{\versaoApostila}{tutor}=0
+		\estiloAlunos
 		\color{gray}
-		\setmainfont{Spectral}
-		\leftskip=0pt
 	\fi
 	\def\destinacaoConteudo{\kParaAlunos}
 }
@@ -84,9 +81,8 @@
 \newcommand{\paraAmbos}{%
 	\def\destinacaoConteudo{\kParaAmbos}
 	\ifnum\strcmp{\versaoApostila}{tutor}=0
+		\estiloAlunos
 		\color{black}
-		\setmainfont{Spectral}
-		\leftskip=0pt
 	\fi
 }
 
@@ -280,13 +276,19 @@
  }
  
  \normalmarginpar
+ \marginparpush=2\gridL
  
  \newcommand{\notaTutor}[1]{
  	\hspace{0pt}\marginpar{
  		\scriptsize
  		\linespread{1.654} 
+ 		\parskip=\gridL
  		\ArchivoMediumEight
  		\raggedright
+		\setlist[enumerate]{leftmargin=0.5\gridM, labelsep=0.25\gridM}
+		\setlist[itemize]{leftmargin=0.5\gridM, labelsep=0.25\gridM}
+		\renewcommand\labelitemi{{\setmainfont{Spectral}→}\ArchivoMediumEight}
+ 		
  		#1}}
  
 \fi
@@ -406,9 +408,26 @@
 \titleformat{name=\chapter}[display]{}{}{0em}{\caixatitulao}[\vspace{-6\gridL}]
 \titleformat{name=\section}[display]{}{}{0em}{\tituloComOndulado}[\vspace{-3\gridL}]
 
-\setlist[enumerate]{leftmargin=0pt, labelsep=0.5\gridM}
-\setlist[itemize]{leftmargin=0pt, labelsep=0.5\gridM}
-\renewcommand\labelitemi{→}
+
+\newcommand{\estiloAlunos}{
+	\setlist[enumerate]{leftmargin=0pt, labelsep=0.5\gridM}
+	\setlist[itemize]{leftmargin=0pt, labelsep=0.5\gridM}
+	\renewcommand\labelitemi{→}
+	
+	\setmainfont{Spectral}
+	\leftskip=0pt
+}
+
+\newcommand{\estiloTutores}{
+	\setlist[enumerate]{leftmargin=-2.0\gridM, labelsep=0.5\gridM}
+	\setlist[itemize]{leftmargin=-2.0\gridM, labelsep=0.5\gridM}
+	\renewcommand\labelitemi{{\setmainfont{Spectral} →}}
+	\color{black}
+	\ArchivoMediumNine
+	\leftskip=-2.0\gridM
+}
+
+\estiloAlunos
 
 %texto alinhado a esquerda
 \raggedright
@@ -520,6 +539,7 @@ Em termos da abordagem, nosso foco não é em fluência na resolução de exerc�
 
 Como tutor, você atenderá dois grupos com cerca de 10 ingressantes cada e terá acesso a um professor que orientará o trabalho dos tutores ao longo de todo o semestre. Para além dos encontros, esperamos de você uma boa preparação antes de cada encontro e algumas tarefas gerenciais relacionadas ao acompanhamento e avaliação das atividades. Suas obrigações devem ficar claras ao longo das próximas seções.
 
+\newpage
 \section{O que esperamos de você, tutor}
 
 \subsection{Conheça o material}
@@ -679,11 +699,11 @@ Aqui virá o texto da Adriane sobre a transição para o Ensino Superior.
 
 \subfile{cap1_estudante.tex} %Matrizes 2x2
 
-\ifnum\strcmp{\versaoApostila}{aluno}=0
-	\clearquadruplepage
-\fi
+%\ifnum\strcmp{\versaoApostila}{aluno}=0
+%	\clearquadruplepage
+%\fi
 
-\subfile{cap2_estudante.tex} %Potenciais, exp e log
+%\subfile{cap2_estudante.tex} %Potenciais, exp e log
 
 %\subfile{cap3_estudante.tex} %Polinomios
 
