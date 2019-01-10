@@ -2,3 +2,7 @@ tmp
 exports
 *.pdf
 .idea
+*.synctex*
+*.aux
+*.log
+*.cut
