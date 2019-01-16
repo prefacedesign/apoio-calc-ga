@@ -537,9 +537,15 @@
 
 \subfile{cap2_estudante.tex} %Potenciais, exp e log
 
+
+%Leo este aqui eu não encontrei, você ainda não fez?
 %\subfile{cap3_estudante.tex} %Polinomios
 
-%\subfile{cap4_estudante.tex} %trigonometria e vetores
+
+\ifnum\strcmp{\versaoApostila}{aluno}=0
+	\clearquadruplepage
+\fi
+\subfile{cap4.tex} %trigonometria e vetores
 
 %\subfile{cap5_estudante.tex} %troca de variaveis
 
