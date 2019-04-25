@@ -538,8 +538,10 @@
 \subfile{cap2.tex} %Potenciais, exp e log
 
 
-%Leo este aqui eu não encontrei, você ainda não fez?
-%\subfile{cap3_estudante.tex} %Polinomios
+\ifnum\strcmp{\versaoApostila}{aluno}=0
+	\clearquadruplepage
+\fi
+\subfile{cap3.tex} %polinômios e afins
 
 
 \ifnum\strcmp{\versaoApostila}{aluno}=0
