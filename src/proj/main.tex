@@ -130,7 +130,7 @@
 ]
 
 \newfontfamily\ArchivoBlackFourteen[SizeFeatures={Size=14}]{Archivo Black}
-\newfontfamily\ArchivoBlackTen[SizeFeatures={Size=10}]{Archivo Black}
+\newfontfamily\ArchivoBlackTen[SizeFeatures={Size=9}]{Archivo Black}
 \newfontfamily\ArchivoMediumTitle[SizeFeatures={Size=36}]{Archivo}
 \newfontfamily\ArchivoMediumNine[SizeFeatures={Size=9}]{Archivo}
 \newfontfamily\ArchivoMediumEight[SizeFeatures={Size=7.8}]{Archivo}
@@ -325,17 +325,18 @@
 
    \ifnum\destinacaoConteudo=\kParaTutores{
    	\leftskip=-2.0\gridM \parskip=0pt
-   	\ArchivoBlackTen #1 \vspace{-3\gridL}
+   	\ArchivoBlackTen #1 \vspace{-2\gridL}
    	
 }
-   \else { \ArchivoBlackTen #1 \vspace{-3\gridL}}
+   \else { \ArchivoBlackTen #1 \vspace{-2\gridL}}
    \fi
    
 }
 
 \titleformat{name=\subsection}{}{}{0em}{\tituloSubsection} %2 módulos ====>>> Muito estranho se desloca prá baixo ele ferra com a divisória
 
-\def\divisoria{\bgroup \markoverwith{\lower3.5\p@\hbox{\sixly \textcolor{titlecolor}{\char58}}}\ULon}
+% \def\divisoria{\bgroup \markoverwith{\lower3.5\p@\hbox{\sixly \textcolor{titlecolor}{\char58}}}\ULon}
+\def\divisoria{\bgroup \markoverwith{\lower 3.5pt \hbox{\sixly \textcolor{titlecolor}{\char58}}}\ULon}
 \font\sixly=lasyb10
 \def\divisoriapadrao{\divisoria{\hspace{14\gridM}}}
 
@@ -403,7 +404,7 @@
 }
 
 \titleformat{name=\chapter}[display]{}{}{0em}{\caixatitulao}[\vspace{-6\gridL}]
-\titleformat{name=\section}[display]{}{}{0em}{\tituloComOndulado}[\vspace{-3\gridL}]
+\titleformat{name=\section}[display]{}{}{0em}{\tituloComOndulado}[\vspace{-2\gridL}]
 
 
 \newcommand{\estiloAlunos}{
