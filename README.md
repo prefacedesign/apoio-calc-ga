@@ -8,7 +8,7 @@ Leonardo pode trabalhar na pasta ```src/leo```, e a Preface na pasta ```src/proj
 
 Para compilar o projeto usando uma instalação padronizada do Texlive já com todas as fontes, só rodar o script, ou no linux ou no WSL2 (Windows Subsystem For Linux), o docker estar instalado é um pré-requisito:
 
-```$ ./scripts/install-build-enviroment.sh```
+``$ ./scripts/install-build-enviroment.sh``
 
 E em seguida dois comandos estarão disponíveis, que podem ser usados para compilar o documento, exemplos de como compilar.
 
@@ -37,10 +37,10 @@ Com estas informações o arara sabe que é preciso rodar o comando xelatex duas
 
 É possível compilar também nativamente no windows, mas é mais difícil produzir uma linha de comando específica para tal, por isto, procure usar o texlive 2022 (talvez versões mais novas funcionam). É preciso instalar todas as seguintes fontes:
 
-https://github.com/google/fonts/raw/main/ofl/archivoblack/ArchivoBlack-Regular.ttf 
-https://fonts.google.com/download?family=Archivo
-https://fonts.google.com/download?family=BioRhyme+Expanded
-https://fonts.google.com/download?family=Spectral
+- https://github.com/google/fonts/raw/main/ofl/archivoblack/ArchivoBlack-Regular.ttf 
+- https://fonts.google.com/download?family=Archivo
+- https://fonts.google.com/download?family=BioRhyme+Expanded
+- https://fonts.google.com/download?family=Spectral
 
 São as fontes "ArchivoBlack-Regular", "Archivo", "BioRhyme+Expanded" e "Spectral" do Google Fonts, é possível que daqui alguns anos estes links estejam fora do ar (hoje estamos em 2023). Então procure os links atuais. Importante instalar todas as fontes, e no caso da Archivo sempre usar a versão estática (e não a versão variável).
 
